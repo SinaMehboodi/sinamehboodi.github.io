@@ -79,16 +79,17 @@
     }
 
     .brand{ display:flex; align-items:center; gap: 12px; }
-    .logo{
-      width: 46px; height: 46px; border-radius: 14px;
-      background: radial-gradient(circle at 30% 30%, rgba(34,211,238,0.35), transparent 55%),
-                  radial-gradient(circle at 80% 20%, rgba(56,189,248,0.25), transparent 60%),
-                  rgba(255,255,255,0.06);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow2);
-      position: relative;
-      overflow: hidden;
+    .avatar{
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;      /* round photo */
+      object-fit: cover;
+      border: 2px solid rgba(34,211,238,0.6);
+      box-shadow:
+        0 0 0 4px rgba(34,211,238,0.15),
+        0 10px 26px rgba(0,0,0,0.45);
     }
+
     .logo:after{
       content:"";
       position:absolute; inset: -40%;
