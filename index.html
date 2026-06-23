@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics: remove this block if you do not want analytics. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GN46JLLP0X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,731 +12,733 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sina Mehboodi — Python, data visualization, reporting, experimental data processing, and data analytics." />
+  <meta name="description" content="Sina Mehboodi — physicist, solution consultant, and scientific programmer with experience in research, data analysis, technical systems, and scientific communication." />
   <meta name="theme-color" content="#07121f" />
-  <title>Sina Mehboodi | Data Analyst Portfolio</title>
+  <title>Sina Mehboodi | Physics, Data & Technology</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Sina Mehboodi | Data Analyst Portfolio" />
-  <meta property="og:description" content="Python, data visualization, reporting, experimental data processing, and a growing focus on data analytics." />
+  <meta property="og:title" content="Sina Mehboodi | Physics, Data & Technology" />
+  <meta property="og:description" content="Research, scientific computing, data analysis, technical systems, and solution consulting." />
   <meta property="og:type" content="website" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%2338bdf8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2307121f'/%3E%3Cpath d='M18 40c6 7 22 7 28 0' stroke='url(%23g)' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M22 24h20' stroke='url(%23g)' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E" />
 
   <style>
     :root{
-      --accent: #22d3ee;
-      --accent2: #38bdf8;
-
-      --bg0: #07121f;
-      --bg1: #0a1a2e;
-      --panel: rgba(255,255,255,0.06);
-      --panel2: rgba(255,255,255,0.085);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.70);
-      --muted2: rgba(255,255,255,0.58);
-
-      --border: rgba(255,255,255,0.18);
-      --border2: rgba(34,211,238,0.32);
-
-      --shadow: 0 18px 70px rgba(0,0,0,0.55);
-      --shadow2: 0 12px 30px rgba(0,0,0,0.40);
-
-      --glass: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
-      --glass2: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
-
-      --ring: 0 0 0 4px rgba(34,211,238,0.20);
-      --radius: 18px;
-      --radius2: 26px;
-      --max: 1120px;
-
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --accent:#22d3ee;
+      --accent2:#38bdf8;
+      --bg0:#07121f;
+      --bg1:#0a1a2e;
+      --text:rgba(255,255,255,.93);
+      --muted:rgba(255,255,255,.72);
+      --muted2:rgba(255,255,255,.58);
+      --border:rgba(255,255,255,.17);
+      --border-accent:rgba(34,211,238,.32);
+      --shadow:0 18px 70px rgba(0,0,0,.48);
+      --shadow-soft:0 12px 30px rgba(0,0,0,.32);
+      --glass:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+      --glass2:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+      --radius:18px;
+      --radius-lg:26px;
+      --max:1120px;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
     }
 
-    *{ box-sizing: border-box; }
-    html, body{ height: 100%; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: var(--sans);
-      color: var(--text);
+      font-family:var(--sans);
+      color:var(--text);
       background:
-        radial-gradient(1200px 700px at 12% 10%, rgba(34,211,238,0.20), transparent 60%),
-        radial-gradient(1000px 650px at 82% 18%, rgba(56,189,248,0.18), transparent 58%),
-        radial-gradient(900px 650px at 55% 95%, rgba(34,211,238,0.10), transparent 62%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-      line-height: 1.58;
+        radial-gradient(1200px 700px at 12% 10%,rgba(34,211,238,.20),transparent 60%),
+        radial-gradient(1000px 650px at 82% 18%,rgba(56,189,248,.18),transparent 58%),
+        radial-gradient(900px 650px at 55% 95%,rgba(34,211,238,.10),transparent 62%),
+        linear-gradient(180deg,var(--bg0),var(--bg1));
+      line-height:1.58;
     }
 
-    a{ color: inherit; text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    a{color:inherit;text-decoration:none}
+    a:hover{text-decoration:underline}
+    :focus-visible{outline:3px solid rgba(34,211,238,.55);outline-offset:3px;border-radius:8px}
 
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 28px 18px 60px;
-    }
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px 18px 60px}
 
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 14px;
-      padding: 10px 2px 18px;
+      gap:18px;
+      padding:8px 2px 18px;
     }
 
-    .brand{ display:flex; align-items:center; gap: 12px; }
-    .avatar{
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(34,211,238,0.6);
-      box-shadow:
-        0 0 0 4px rgba(34,211,238,0.15),
-        0 10px 26px rgba(0,0,0,0.45);
+    .brand{display:flex;align-items:center;gap:13px;min-width:220px}
+    .avatar-wrap{
+      width:82px;
+      height:82px;
+      border-radius:50%;
+      position:relative;
+      flex:0 0 auto;
+      border:2px solid rgba(34,211,238,.58);
+      box-shadow:0 0 0 4px rgba(34,211,238,.13),0 10px 26px rgba(0,0,0,.38);
+      overflow:hidden;
+      background:linear-gradient(135deg,rgba(34,211,238,.24),rgba(56,189,248,.08));
+      display:grid;
+      place-items:center;
     }
+    .avatar{width:100%;height:100%;object-fit:cover;display:block}
+    .avatar-fallback{display:none;font-weight:750;letter-spacing:.5px;font-size:22px}
 
-    .brand h1{
-      font-size: 16px; margin: 0;
-      letter-spacing: .2px;
-    }
-    .brand p{
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-      font-family: var(--mono);
-    }
+    .brand h1{font-size:17px;margin:0;letter-spacing:.15px}
+    .brand p{margin:2px 0 0;font-size:12.5px;color:var(--muted);font-family:var(--mono)}
 
-    .actions{
-      display:flex; gap: 10px; flex-wrap: wrap;
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
       justify-content:flex-end;
       align-items:center;
+      gap:8px;
     }
+    .nav a{
+      padding:8px 10px;
+      border-radius:12px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text);text-decoration:none}
 
     .btn{
-      display:inline-flex; align-items:center; gap: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.06);
-      box-shadow: var(--shadow2);
-      transition: transform .12s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
-      font-size: 13px;
-      color: var(--text);
-      white-space: nowrap;
-      position: relative;
-      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:10px 13px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.06);
+      box-shadow:var(--shadow-soft);
+      transition:transform .12s ease,border-color .12s ease,background .12s ease;
+      font-size:13px;
+      white-space:nowrap;
     }
-    .btn:before{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(135deg, rgba(34,211,238,0.10), rgba(56,189,248,0.06));
-      opacity: 0;
-      transition: opacity .12s ease;
-    }
-    .btn > *{ position:relative; }
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: var(--border2);
-      background: rgba(255,255,255,0.075);
-      box-shadow: var(--shadow2), 0 0 0 1px rgba(34,211,238,0.10) inset;
-      text-decoration:none;
-    }
-    .btn:hover:before{ opacity: 1; }
-    .btn:focus{ outline:none; box-shadow: var(--shadow2), var(--ring); }
-
-    .badge{
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      border: 1px solid rgba(34,211,238,0.28);
-      background: linear-gradient(135deg, rgba(34,211,238,0.14), rgba(56,189,248,0.08));
-      color: rgba(255,255,255,0.80);
-    }
+    .btn:hover{transform:translateY(-1px);border-color:var(--border-accent);background:rgba(255,255,255,.08);text-decoration:none}
+    .btn.primary{background:linear-gradient(135deg,rgba(34,211,238,.20),rgba(56,189,248,.11));border-color:rgba(34,211,238,.42)}
 
     .hero{
-      margin-top: 8px;
-      border-radius: var(--radius2);
-      border: 1px solid rgba(34,211,238,0.22);
-      background: var(--glass);
-      box-shadow: var(--shadow);
+      border-radius:var(--radius-lg);
+      border:1px solid rgba(34,211,238,.22);
+      background:var(--glass);
+      box-shadow:var(--shadow);
       overflow:hidden;
-      position: relative;
+      position:relative;
     }
-    .hero:before{
+    .hero::before{
       content:"";
-      position:absolute; inset: -25%;
-      background: radial-gradient(circle at 30% 30%, rgba(34,211,238,0.35), transparent 55%),
-                  radial-gradient(circle at 80% 20%, rgba(56,189,248,0.22), transparent 58%);
-      filter: blur(42px);
-      opacity: .55;
+      position:absolute;
+      inset:-25%;
+      background:
+        radial-gradient(circle at 30% 30%,rgba(34,211,238,.35),transparent 55%),
+        radial-gradient(circle at 80% 20%,rgba(56,189,248,.22),transparent 58%);
+      filter:blur(42px);
+      opacity:.52;
       pointer-events:none;
     }
-    .hero:after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 45%);
-      pointer-events:none;
-    }
-
     .hero-inner{
-      position: relative;
-      padding: 28px 22px;
+      position:relative;
+      padding:34px 26px;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-    }
-    @media (max-width: 860px){
-      .hero-inner{ grid-template-columns: 1fr; }
+      grid-template-columns:1.25fr .75fr;
+      gap:22px;
+      align-items:stretch;
     }
 
-    .title{
-      margin: 0 0 10px;
-      font-size: 36px;
-      letter-spacing: -0.8px;
-      line-height: 1.12;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border:1px solid rgba(34,211,238,.28);
+      border-radius:999px;
+      background:rgba(34,211,238,.08);
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(255,255,255,.79);
+      margin-bottom:14px;
     }
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px rgba(34,211,238,.9)}
+
+    .title{margin:0 0 14px;font-size:clamp(34px,5vw,54px);letter-spacing:-1.4px;line-height:1.04}
     .title .accent{
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
+    .subtitle{margin:0;color:var(--muted);font-size:16px;max-width:74ch}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 
-    .subtitle{
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 72ch;
-    }
-
-    .chips{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 14px; }
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:19px}
     .chip{
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.045);
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.76);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+      border:1px solid rgba(255,255,255,.17);
+      background:rgba(255,255,255,.045);
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:rgba(255,255,255,.76);
     }
-    .chip b{
-      color: rgba(255,255,255,0.92);
-      font-weight: 650;
-    }
+    .chip b{color:var(--text);font-weight:650}
 
     .card{
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.18);
-      background: var(--glass2);
-      box-shadow: var(--shadow2);
-      padding: 16px 16px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      position: relative;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.18);
+      background:var(--glass2);
+      box-shadow:var(--shadow-soft);
+      padding:17px;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      position:relative;
       overflow:hidden;
     }
-    .card:before{
+    .card::before{
       content:"";
-      position:absolute; left:0; top:0; bottom:0; width: 3px;
-      background: linear-gradient(180deg, var(--accent), transparent);
-      opacity: .85;
+      position:absolute;
+      left:0;top:0;bottom:0;width:3px;
+      background:linear-gradient(180deg,var(--accent),transparent);
+      opacity:.85;
     }
-    .card h3{
-      margin: 0 0 10px;
-      font-size: 13px;
-      letter-spacing: .35px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.68);
+    .card h3,.section-head h2{
+      margin:0;
+      font-size:13px;
+      letter-spacing:.38px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.72);
     }
-    .kv{
-      display:grid;
-      gap: 10px;
-      font-size: 14px;
-    }
-    .kv div{ display:flex; justify-content:space-between; gap: 10px; }
-    .kv span{ color: var(--muted2); }
-    .kv strong{ font-weight: 650; }
-
-    .pill-list{ display:flex; flex-wrap:wrap; gap: 8px; }
-    .pill{
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.045);
-      color: rgba(255,255,255,0.78);
-      font-size: 13px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 14px;
-    }
-    @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; }
-    }
+    .facts{display:grid;gap:11px;margin-top:13px;font-size:14px}
+    .fact{display:grid;grid-template-columns:105px 1fr;gap:10px}
+    .fact span{color:var(--muted2)}
+    .fact strong{font-weight:650}
 
     .section{
-      margin-top: 18px;
-      border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.03);
-      box-shadow: var(--shadow2);
+      margin-top:18px;
+      border-radius:var(--radius-lg);
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.03);
+      box-shadow:var(--shadow-soft);
       overflow:hidden;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      scroll-margin-top:18px;
     }
     .section-head{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 12px;
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.04);
-      position: relative;
+      gap:12px;
+      padding:14px 17px;
+      border-bottom:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.04);
+      position:relative;
     }
-    .section-head:before{
+    .section-head::before{
       content:"";
-      position:absolute; left:0; top:0; bottom:0; width: 3px;
-      background: linear-gradient(180deg, rgba(34,211,238,0.95), rgba(56,189,248,0.35));
-      opacity: .9;
+      position:absolute;
+      left:0;top:0;bottom:0;width:3px;
+      background:linear-gradient(180deg,rgba(34,211,238,.95),rgba(56,189,248,.35));
     }
-    .section-head h2{
-      margin:0;
-      font-size: 13px;
-      letter-spacing: .35px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.74);
-    }
-    .section-body{
-      padding: 16px;
-      display:grid;
-      gap: 12px;
-    }
+    .section-head p{margin:0;font-size:12.5px;color:var(--muted2);font-family:var(--mono)}
+    .section-body{padding:16px;display:grid;gap:12px}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 
     .item{
-      padding: 14px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.045);
-      box-shadow: 0 0 0 1px rgba(0,0,0,0.10) inset;
-      position: relative;
+      padding:15px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.045);
+      position:relative;
       overflow:hidden;
     }
-    .item:before{
+    .item::before{
       content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(600px 120px at 20% 0%, rgba(34,211,238,0.12), transparent 55%);
-      opacity: .8;
+      position:absolute;
+      inset:0;
+      background:radial-gradient(600px 120px at 20% 0%,rgba(34,211,238,.11),transparent 55%);
       pointer-events:none;
     }
-    .item > *{ position: relative; }
-
-    .item-top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 14px;
-    }
-    .item h3{
-      margin: 0;
-      font-size: 16px;
-      letter-spacing: -0.2px;
-    }
-    .meta{
-      color: rgba(255,255,255,0.70);
-      font-size: 13px;
-      margin-top: 4px;
-    }
+    .item>*{position:relative}
+    .item-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+    .item h3{margin:0;font-size:16px;letter-spacing:-.2px}
+    .item h4{margin:0 0 8px;font-size:14px;color:rgba(255,255,255,.85)}
+    .meta{color:rgba(255,255,255,.68);font-size:13px;margin-top:4px}
     .dates{
-      font-family: var(--mono);
-      font-size: 12px;
-      color: rgba(255,255,255,0.72);
-      border: 1px solid rgba(34,211,238,0.26);
-      background: rgba(34,211,238,0.08);
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(255,255,255,.75);
+      border:1px solid rgba(34,211,238,.25);
+      background:rgba(34,211,238,.08);
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
     }
+    .item p{color:rgba(255,255,255,.75);margin:10px 0 0}
+    ul{margin:10px 0 0 18px;padding:0}
+    li{margin:6px 0;color:rgba(255,255,255,.75)}
 
-    ul{ margin: 10px 0 0 18px; }
-    li{ margin: 6px 0; color: rgba(255,255,255,0.74); }
+    .pill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.17);
+      background:rgba(255,255,255,.045);
+      color:rgba(255,255,255,.78);
+      font-size:13px;
+    }
+    .label{
+      display:inline-flex;
+      padding:5px 8px;
+      border-radius:8px;
+      background:rgba(34,211,238,.09);
+      border:1px solid rgba(34,211,238,.22);
+      color:rgba(255,255,255,.76);
+      font-size:11.5px;
+      font-family:var(--mono);
+      margin-bottom:8px;
+    }
+    .project-link{display:inline-flex;align-items:center;gap:7px;margin-top:12px;color:rgba(255,255,255,.86);font-size:13px}
 
-    .two-col{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+    details{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.035);
+      border-radius:14px;
+      padding:12px 14px;
     }
-    @media (max-width: 820px){
-      .two-col{ grid-template-columns: 1fr; }
-    }
+    summary{cursor:pointer;font-weight:650;color:rgba(255,255,255,.85)}
+    details ul{margin-top:10px}
 
     .footer{
-      margin-top: 18px;
+      margin-top:18px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       flex-wrap:wrap;
-      gap: 10px;
-      color: rgba(255,255,255,0.70);
-      font-size: 13px;
-      padding: 0 4px;
+      gap:10px;
+      color:rgba(255,255,255,.66);
+      font-size:13px;
+      padding:0 4px;
     }
-    .small-note{ font-family: var(--mono); opacity: .9; }
+    .small-note{font-family:var(--mono);font-size:12px}
+
+    @media (max-width:920px){
+      .topbar{align-items:flex-start;flex-direction:column}
+      .nav{justify-content:flex-start}
+      .hero-inner,.grid,.three-col{grid-template-columns:1fr}
+    }
+    @media (max-width:720px){
+      .two-col{grid-template-columns:1fr}
+      .item-top{flex-direction:column}
+      .dates{white-space:normal}
+      .fact{grid-template-columns:90px 1fr}
+    }
+    @media (max-width:520px){
+      .wrap{padding:14px 12px 44px}
+      .hero-inner{padding:26px 18px}
+      .avatar-wrap{width:68px;height:68px}
+      .nav a{padding:7px 8px}
+      .title{font-size:36px}
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <header class="topbar" aria-label="Top navigation">
-      <div class="brand">
-        <img src="./profile.png" alt="Sina Mehboodi" class="avatar" />
-        <div>
-          <h1>Sina Mehboodi</h1>
-          <p>Data Analyst • Munich, Germany</p>
-        </div>
-      </div>
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="avatar-wrap">
+          <img src="./profile.png" alt="Portrait of Sina Mehboodi" class="avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="avatar-fallback" aria-hidden="true">SM</span>
+        </span>
+        <span>
+          <h1>Sina Mehboodi, Ph.D.</h1>
+          <p>Physics • Data • Technology</p>
+        </span>
+      </a>
 
-      <nav class="actions" aria-label="Quick actions">
-        <a class="btn" href="mailto:sinamehboodi@gmail.com" aria-label="Email Sina"><span aria-hidden="true">✉️</span><span>Email</span></a>
-        <a class="btn" href="https://www.sinamehboodi.io" target="_blank" rel="noreferrer"><span aria-hidden="true">🌐</span><span>Website</span></a>
-        <a class="btn" href="https://www.linkedin.com/in/Sina-Mehboodi" target="_blank" rel="noreferrer"><span aria-hidden="true">in</span><span>LinkedIn</span></a>
-        <a class="btn" href="https://github.com/SinaMehboodi" target="_blank" rel="noreferrer"><span aria-hidden="true">⌂</span><span>GitHub</span></a>
-        <span class="badge">Open to Data Analyst roles</span>
+      <nav class="nav" aria-label="Page sections">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <section class="hero" aria-label="Intro">
-      <div class="hero-inner">
-        <div>
-          <h2 class="title">Work with data.<br><span class="accent">Present insights clearly.</span></h2>
-          <p class="subtitle">
-            Analytical and detail-oriented professional with a Ph.D. background in experimental physics and practical experience in Python, data visualization, reporting, and experimental data processing. Experienced in working with complex datasets, presenting results clearly, and solving technical problems in research environments. Recently expanded knowledge in data analytics, Excel-based analysis, predictive analytics, and data literacy through LinkedIn Learning. Seeking to apply strong analytical thinking, technical skills, and a structured approach in a Data Analyst or IT Specialist in Data and Process Analysis role.
-          </p>
+    <main id="top">
+      <section class="hero" id="about" aria-label="Introduction">
+        <div class="hero-inner">
+          <div>
+            <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Munich, Germany</span>
+            <h2 class="title">Physics, data, and technology—<br><span class="accent">connected by analytical thinking.</span></h2>
+            <p class="subtitle">
+              I am a physicist and technology professional with experience in experimental research, scientific programming, data analysis, technical systems, and solution consulting. I enjoy understanding complex problems, structuring information clearly, and turning technical requirements or measurement results into practical, understandable outcomes.
+            </p>
 
-          <div class="chips" aria-label="Key strengths">
-            <span class="chip"><b>Python</b> • Data Processing</span>
-            <span class="chip"><b>Data Visualization</b> • Reporting</span>
-            <span class="chip"><b>SQL</b> Systems</span>
-            <span class="chip"><b>Excel</b> Analysis</span>
-            <span class="chip"><b>Research</b> Data Work</span>
+            <div class="hero-actions">
+              <a class="btn primary" href="#experience">View experience</a>
+              <a class="btn" href="https://github.com/SinaMehboodi" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn" href="https://www.linkedin.com/in/Sina-Mehboodi" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn" href="mailto:sinamehboodi@gmail.com">Email</a>
+              <a class="btn" href="./Sina_Mehboodi_CV.pdf">Download CV</a>
+            </div>
+
+            <div class="chips" aria-label="Professional areas">
+              <span class="chip"><b>Experimental Physics</b></span>
+              <span class="chip"><b>Scientific Python</b></span>
+              <span class="chip"><b>Data Analysis & Visualization</b></span>
+              <span class="chip"><b>Solution Consulting</b></span>
+              <span class="chip"><b>Technical Communication</b></span>
+            </div>
           </div>
-        </div>
 
-        <aside class="card" aria-label="Contact and quick facts">
-          <h3>Contact</h3>
-          <div class="kv">
-            <div><span>Email</span><strong><a href="mailto:sinamehboodi@gmail.com">sinamehboodi@gmail.com</a></strong></div>
-            <div><span>Phone</span><strong><a href="tel:+4914751586184">+49 147 5158 6184</a></strong></div>
-            <div><span>Location</span><strong>Munich, Germany</strong></div>
-            <div><span>Site</span><strong><a href="https://www.sinamehboodi.io" target="_blank" rel="noreferrer">sinamehboodi.io</a></strong></div>
-          </div>
-          <div style="height:12px"></div>
-          <h3>Languages</h3>
-          <div class="pill-list" aria-label="Languages">
-            <span class="pill">English — Fluent</span>
-            <span class="pill">German — A2</span>
-            <span class="pill">Persian — Native</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <div class="grid" aria-label="Main content">
-      <section class="section" aria-label="Education">
-        <div class="section-head">
-          <h2>Education</h2>
-          <span class="dates">2010–2026</span>
-        </div>
-        <div class="section-body">
-          <article class="item">
-            <div class="item-top">
-              <div>
-                <h3>Ph.D. in Physics — Technische Universität München (TUM)</h3>
-                <div class="meta">Munich, Germany</div>
-                <div class="meta">Research Focus: Surface Engineering in Chiral Magnetic Insulators; magnetic materials characterization; experimental data analysis</div>
-              </div>
-              <div class="dates">2022–2026</div>
+          <aside class="card" aria-label="Professional summary">
+            <h3>Profile</h3>
+            <div class="facts">
+              <div class="fact"><span>Current</span><strong>Junior Solution Consultant working with Planisware</strong></div>
+              <div class="fact"><span>Background</span><strong>Ph.D. in Experimental Physics</strong></div>
+              <div class="fact"><span>Strengths</span><strong>Analysis, visualization, documentation, problem solving</strong></div>
+              <div class="fact"><span>Languages</span><strong>Persian, English, German in progress</strong></div>
+              <div class="fact"><span>Interests</span><strong>Scientific software, analytics, quantitative applications, quantum technologies</strong></div>
             </div>
-          </article>
-
-          <article class="item">
-            <div class="item-top">
-              <div>
-                <h3>Doctoral Studies in Physics (Coursework Completed) — IASBS</h3>
-                <div class="meta">Zanjan, Iran</div>
-                <div class="meta">Ranked 113 among ~6000 in national Physics Ph.D. entrance exam 2017</div>
-              </div>
-              <div class="dates">2017–2018</div>
-            </div>
-          </article>
-
-          <article class="item">
-            <div class="item-top">
-              <div>
-                <h3>M.Sc. in Physics — IASBS</h3>
-                <div class="meta">Zanjan, Iran • GPA: 17.29/20, 3rd in class</div>
-                <div class="meta">Top 5% in national M.Sc. entrance exam 2015</div>
-              </div>
-              <div class="dates">2015–2017</div>
-            </div>
-          </article>
-
-          <article class="item">
-            <div class="item-top">
-              <div>
-                <h3>B.Sc. in Physics — Urmia University</h3>
-                <div class="meta">Urmia, Iran</div>
-                <div class="meta">Top 5% in national B.Sc. entrance exam 2010</div>
-              </div>
-              <div class="dates">2010–2014</div>
-            </div>
-          </article>
+          </aside>
         </div>
       </section>
 
-      <section class="section" aria-label="Experience">
+      <section class="section" id="experience" aria-label="Professional experience">
         <div class="section-head">
-          <h2>Experience</h2>
-          <span class="dates">2018–2026</span>
+          <h2>Professional Experience</h2>
+          <p>Research • Consulting • Technical Systems</p>
         </div>
         <div class="section-body">
           <article class="item">
             <div class="item-top">
               <div>
-                <h3>Doctoral Researcher – Experimental Physics &amp; Data Analysis</h3>
+                <h3>Junior Solution Consultant — Planisware Environment</h3>
+                <div class="meta">Germany</div>
+              </div>
+              <div class="dates">2026–Present</div>
+            </div>
+            <ul>
+              <li>Building practical experience in solution consulting for project and portfolio management environments.</li>
+              <li>Supporting the structured analysis of requirements, system-related questions, testing, and documentation.</li>
+              <li>Combining a technical background with clear communication and a methodical approach to problem solving.</li>
+            </ul>
+          </article>
+
+          <article class="item">
+            <div class="item-top">
+              <div>
+                <h3>Doctoral Researcher — Experimental Physics & Data Analysis</h3>
                 <div class="meta">Technische Universität München (TUM) • Munich, Germany</div>
               </div>
               <div class="dates">2022–2026</div>
             </div>
             <ul>
-              <li>Collected, cleaned, structured, and analyzed experimental datasets from multiple measurement systems.</li>
-              <li>Interpreted complex measurement data to identify trends, validate results, and support research conclusions.</li>
-              <li>Used Python, Mathematica, and LabVIEW for data processing, analysis, visualization, and experimental evaluation.</li>
-              <li>Documented experimental procedures, data outputs, and technical changes in a structured and reproducible manner.</li>
-              <li>Collaborated with students, researchers, and international partners to support data-driven experimental work.</li>
-              <li>Presented findings through reports, visual analysis, and scientific communication.</li>
+              <li>Developed <strong>drlib</strong>, a Python library for recurring research-data analysis and visualization tasks.</li>
+              <li>Collected, cleaned, structured, and analysed experimental data from several measurement systems.</li>
+              <li>Used Python, Mathematica, and LabVIEW for data processing, visualization, experimental control, and evaluation.</li>
+              <li>Documented experimental procedures and technical changes to support reproducible research work.</li>
+              <li>Collaborated with students, researchers, and international partners and presented results in reports and scientific discussions.</li>
             </ul>
           </article>
 
-          <article class="item">
-            <div class="item-top">
-              <div>
-                <h3>IT Technician — Sepid Surgery Day Clinic</h3>
-                <div class="meta">Shiraz, Iran</div>
+          <div class="two-col">
+            <article class="item">
+              <div class="item-top">
+                <div>
+                  <h3>IT Technician</h3>
+                  <div class="meta">Sepid Surgery Day Clinic • Shiraz, Iran</div>
+                </div>
+                <div class="dates">2020–2021</div>
               </div>
-              <div class="dates">2020–2021</div>
-            </div>
-            <ul>
-              <li>Maintained and optimized SQL-based medical data systems, improving reliability and reducing data errors.</li>
-              <li>Provided technical support to medical staff, improving workflow efficiency and supporting data-related processes.</li>
-              <li>Helped ensure data quality, consistency, and accessibility across daily clinic operations.</li>
-              <li>Supported reporting and system usage through troubleshooting and user assistance.</li>
-            </ul>
+              <ul>
+                <li>Maintained and supported SQL-based medical information systems.</li>
+                <li>Assisted medical staff with system use, troubleshooting, and day-to-day technical issues.</li>
+                <li>Supported reliable access to operational data and helped resolve data-entry and workflow problems.</li>
+              </ul>
+            </article>
+
+            <article class="item">
+              <div class="item-top">
+                <div>
+                  <h3>Software Technician</h3>
+                  <div class="meta">Tarh-o-Paradazesh-e-Hooshmand-e-Aria • Shiraz, Iran</div>
+                </div>
+                <div class="dates">2018–2020</div>
+              </div>
+              <ul>
+                <li>Installed, configured, and supported hospital information systems and related digital workflows.</li>
+                <li>Provided on-site technical support and user guidance in healthcare environments.</li>
+                <li>Diagnosed software, system, and network-related issues under operational time pressure.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-label="Selected projects">
+        <div class="section-head">
+          <h2>Selected Projects</h2>
+          <p>Code • Analysis • Technical Work</p>
+        </div>
+        <div class="section-body three-col">
+          <article class="item">
+            <span class="label">Python / Research Software</span>
+            <h3>drlib</h3>
+            <p>
+              A Python library developed during my Ph.D. work to organise recurring data-analysis and plotting tasks used in experimental research.
+            </p>
+            <a class="project-link" href="https://github.com/SinaMehboodi/drlib" target="_blank" rel="noreferrer">View repository →</a>
           </article>
 
           <article class="item">
-            <div class="item-top">
-              <div>
-                <h3>Software Technician — Tarh-o-Paradazesh-e-Hooshmand-e-Aria</h3>
-                <div class="meta">Shiraz, Iran</div>
-              </div>
-              <div class="dates">2018–2020</div>
-            </div>
-            <ul>
-              <li>Installed, configured, and maintained hospital information systems and digital workflow software.</li>
-              <li>Provided on-site technical support and user training across healthcare operations.</li>
-              <li>Diagnosed and resolved software and network issues under time-critical conditions.</li>
-              <li>Contributed to more reliable digital processes through structured troubleshooting and system support.</li>
-            </ul>
+            <span class="label">Experimental Data</span>
+            <h3>Magnetic Materials Analysis</h3>
+            <p>
+              Processing and interpretation of complex measurement datasets for research on chiral magnetic materials, including comparison of measurements and preparation of scientific figures.
+            </p>
+          </article>
+
+          <article class="item">
+            <span class="label">Technical Systems</span>
+            <h3>Healthcare Software Support</h3>
+            <p>
+              Installation, maintenance, troubleshooting, and user support for hospital and clinical information systems in operational healthcare environments.
+            </p>
           </article>
         </div>
       </section>
-    </div>
 
-    <section class="section" aria-label="Skills">
-      <div class="section-head">
-        <h2>Technical Skills</h2>
-        <span class="dates">Core Areas</span>
-      </div>
-      <div class="section-body two-col">
-        <article class="item">
-          <h3 style="margin:0 0 8px;">Data Analytics &amp; Visualization</h3>
-          <div class="pill-list">
-            <span class="pill">Data Analysis</span>
-            <span class="pill">Exploratory Data Analysis</span>
-            <span class="pill">Descriptive Statistics</span>
-            <span class="pill">Trend Identification</span>
-            <span class="pill">Data Visualization</span>
-            <span class="pill">Predictive Analytics Fundamentals</span>
-            <span class="pill">CRISP-DM</span>
+      <div class="grid">
+        <section class="section" id="research" aria-label="Research and education">
+          <div class="section-head">
+            <h2>Research & Education</h2>
+            <p>Physics</p>
           </div>
-        </article>
+          <div class="section-body">
+            <article class="item">
+              <div class="item-top">
+                <div>
+                  <h3>Ph.D. in Physics</h3>
+                  <div class="meta">Technische Universität München (TUM) • Munich, Germany</div>
+                  <div class="meta">Research focus: surface engineering in chiral magnetic insulators, magnetic-material characterization, and experimental data analysis</div>
+                </div>
+                <div class="dates">2022–2026</div>
+              </div>
+            </article>
 
-        <article class="item">
-          <h3 style="margin:0 0 8px;">Tools</h3>
-          <div class="pill-list">
-            <span class="pill">Python</span>
-            <span class="pill">SQL-based Systems</span>
-            <span class="pill">Microsoft Excel</span>
-            <span class="pill">Mathematica</span>
-            <span class="pill">LabVIEW</span>
-            <span class="pill">Microsoft Copilot</span>
+            <article class="item">
+              <div class="item-top">
+                <div>
+                  <h3>Doctoral Studies in Physics — Coursework Completed</h3>
+                  <div class="meta">Institute for Advanced Studies in Basic Sciences (IASBS) • Zanjan, Iran</div>
+                  <div class="meta">Ranked 113 among approximately 6,000 candidates in the 2017 national Physics Ph.D. entrance examination</div>
+                </div>
+                <div class="dates">2017–2018</div>
+              </div>
+            </article>
+
+            <article class="item">
+              <div class="item-top">
+                <div>
+                  <h3>M.Sc. in Physics</h3>
+                  <div class="meta">IASBS • Zanjan, Iran</div>
+                  <div class="meta">GPA: 17.29/20 • Third in class • Top 5% in national entrance examination</div>
+                </div>
+                <div class="dates">2015–2017</div>
+              </div>
+            </article>
+
+            <article class="item">
+              <div class="item-top">
+                <div>
+                  <h3>B.Sc. in Physics</h3>
+                  <div class="meta">Urmia University • Urmia, Iran</div>
+                  <div class="meta">Top 5% in national B.Sc. entrance examination</div>
+                </div>
+                <div class="dates">2010–2014</div>
+              </div>
+            </article>
           </div>
-        </article>
+        </section>
 
-        <article class="item">
-          <h3 style="margin:0 0 8px;">Business &amp; Process</h3>
-          <div class="pill-list">
-            <span class="pill">Process Documentation</span>
-            <span class="pill">Stakeholder Support</span>
-            <span class="pill">Workflow Improvement</span>
-            <span class="pill">Data Quality</span>
-            <span class="pill">Reporting</span>
-            <span class="pill">Scrum Fundamentals</span>
+        <section class="section" aria-label="Research output and teaching">
+          <div class="section-head">
+            <h2>Research Output & Teaching</h2>
+            <p>Communication</p>
           </div>
-        </article>
+          <div class="section-body">
+            <article class="item">
+              <span class="label">Publication</span>
+              <h3>Observation of a distorted tilted conical phase</h3>
+              <p>
+                <strong>S. Mehboodi</strong> et al., <em>Science and Technology of Advanced Materials</em>, published online 6 August 2025.
+              </p>
+              <p>
+                Study of the surface of a bulk chiral magnet using resonant elastic X-ray scattering.
+              </p>
+            </article>
 
-        <article class="item">
-          <h3 style="margin:0 0 8px;">IT, Systems &amp; Research</h3>
-          <div class="pill-list">
-            <span class="pill">Linux</span>
-            <span class="pill">Windows</span>
-            <span class="pill">Network Setup &amp; Maintenance</span>
-            <span class="pill">Troubleshooting</span>
-            <span class="pill">SEM</span>
-            <span class="pill">Cryogenic Systems</span>
-            <span class="pill">Synchrotron / REXS</span>
+            <article class="item">
+              <span class="label">Teaching</span>
+              <h3>Laboratory and Physics Instruction</h3>
+              <div class="meta">Technische Universität München (TUM) • 2022–2026</div>
+              <ul>
+                <li>Supported bachelor’s and master’s laboratory work in ferromagnetic resonance.</li>
+                <li>Provided technical guidance for experimental setup, measurement, and interpretation.</li>
+                <li>Assisted with teaching in condensed-matter physics.</li>
+              </ul>
+            </article>
+
+            <article class="item">
+              <span class="label">Science Outreach</span>
+              <h3>Science House of Zanjan & Physics Scientific Association</h3>
+              <div class="meta">IASBS • 2016–2018</div>
+              <p>Co-founded and contributed to activities that used physical demonstrations to make scientific ideas more accessible to high-school students.</p>
+            </article>
           </div>
-        </article>
+        </section>
       </div>
-    </section>
 
-    <section class="section" aria-label="Certifications">
-      <div class="section-head">
-        <h2>Licenses &amp; Certifications</h2>
-        <span class="dates">2025–2026</span>
-      </div>
-      <div class="section-body">
-        <article class="item">
-          <ul>
-            <li>Predictive Analytics Essential Training: Data Mining — LinkedIn Learning</li>
-            <li>Complete Guide to Excel Statistics with Copilot — LinkedIn Learning</li>
-            <li>Learning Data Visualization — LinkedIn Learning</li>
-            <li>Learning Data Analytics Part 2: Extending and Applying Core Knowledge — LinkedIn Learning</li>
-            <li>Learning Data Analytics: 1 Foundations — LinkedIn Learning</li>
-            <li>Data Literacy: Exploring and Describing Data in an AI World — LinkedIn Learning</li>
-            <li>Learning Excel: Data Analysis — LinkedIn Learning</li>
-            <li>The Non-Technical Skills of Effective Data Scientists — LinkedIn Learning</li>
-            <li>Scrum: The Basics — LinkedIn Learning</li>
-            <li>Learning the JavaScript Language — LinkedIn Learning</li>
-            <li>LabVIEW Certifications — Technical University of Munich</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Development">
-      <div class="section-head">
-        <h2>Data Analytics Development</h2>
-        <span class="dates">Focus Area</span>
-      </div>
-      <div class="section-body">
-        <article class="item">
-          <p style="margin:0; color: rgba(255,255,255,0.78);">
-            Completed focused LinkedIn Learning coursework in data analytics, predictive analytics, Excel statistics, data visualization, and data literacy to strengthen transition toward data-focused roles.
-          </p>
-          <p style="margin:10px 0 0; color: rgba(255,255,255,0.74);">
-            Built foundational knowledge in descriptive analysis, visualization, business-oriented analytics thinking, CRISP-DM, and effective communication for data science work.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Leadership">
-      <div class="section-head">
-        <h2>Leadership &amp; Activities</h2>
-        <span class="dates">2016–2026</span>
-      </div>
-      <div class="section-body">
-        <article class="item">
-          <div class="item-top">
-            <div>
-              <h3>Teaching — Technische Universität München (TUM)</h3>
-              <div class="meta">Munich, Germany</div>
+      <section class="section" id="skills" aria-label="Skills">
+        <div class="section-head">
+          <h2>Skills & Tools</h2>
+          <p>Experience separated from developing knowledge</p>
+        </div>
+        <div class="section-body two-col">
+          <article class="item">
+            <h4>Used in Research and Technical Work</h4>
+            <div class="pill-list">
+              <span class="pill">Python</span>
+              <span class="pill">Matplotlib</span>
+              <span class="pill">NumPy — basic</span>
+              <span class="pill">pandas — basic</span>
+              <span class="pill">lmfit — basic</span>
+              <span class="pill">Mathematica</span>
+              <span class="pill">LabVIEW</span>
+              <span class="pill">Experimental Data Analysis</span>
+              <span class="pill">Scientific Visualization</span>
+              <span class="pill">Technical Documentation</span>
+              <span class="pill">Troubleshooting</span>
             </div>
-            <div class="dates">2022–2026</div>
-          </div>
-          <ul>
-            <li>Supported laboratory experiments and provided technical instruction to bachelor’s and master’s students in Ferromagnetic Resonance (FMR).</li>
-            <li>Assisted in teaching Condensed Matter Physics.</li>
-          </ul>
-        </article>
+          </article>
 
-        <article class="item">
-          <div class="item-top">
-            <div>
-              <h3>Co-founder &amp; Member — Science House of Zanjan &amp; Physics Scientific Association (PSA)</h3>
-              <div class="meta">IASBS, Zanjan, Iran</div>
+          <article class="item">
+            <h4>Professional and Analytical Strengths</h4>
+            <div class="pill-list">
+              <span class="pill">Structured Problem Solving</span>
+              <span class="pill">Research Communication</span>
+              <span class="pill">Requirements Understanding</span>
+              <span class="pill">Process-Oriented Thinking</span>
+              <span class="pill">Data Presentation</span>
+              <span class="pill">Teaching and User Support</span>
+              <span class="pill">Interdisciplinary Collaboration</span>
             </div>
-            <div class="dates">2016–2018</div>
-          </div>
-          <ul>
-            <li>Built physics demos to help high-school students explore concepts.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+          </article>
 
-    <section class="section" aria-label="Publication">
-      <div class="section-head">
-        <h2>Publication</h2>
-        <span class="dates">2025</span>
-      </div>
-      <div class="section-body">
-        <article class="item">
-          <p style="margin:0; color: rgba(255,255,255,0.78);">
-            <strong>S. Mehboodi</strong>, et al., <em>Science and Technology of Advanced Materials</em>, published online 06 Aug 2025.
-          </p>
-          <p style="margin:8px 0 0; color: rgba(255,255,255,0.74);">
-            Observation of distorted tilted conical phase at the surface of a bulk chiral magnet with resonant elastic x-ray scattering.
-          </p>
-        </article>
-      </div>
-    </section>
+          <article class="item">
+            <h4>Systems and Environments</h4>
+            <div class="pill-list">
+              <span class="pill">Planisware Environment</span>
+              <span class="pill">SQL-based Medical Systems</span>
+              <span class="pill">Hospital Information Systems</span>
+              <span class="pill">Microsoft Excel</span>
+              <span class="pill">Windows</span>
+              <span class="pill">Scientific Measurement Systems</span>
+            </div>
+          </article>
 
-    <section class="section" aria-label="Interests">
-      <div class="section-head">
-        <h2>Fields of Interest</h2>
-        <span class="dates">Focus</span>
-      </div>
-      <div class="section-body">
-        <article class="item">
-          <div class="pill-list">
-            <span class="pill">Data Analytics</span>
-            <span class="pill">Data Visualization</span>
-            <span class="pill">Predictive Analytics</span>
-            <span class="pill">Process Optimization</span>
-            <span class="pill">Business Process Analysis</span>
-            <span class="pill">Reporting</span>
-            <span class="pill">SQL</span>
-            <span class="pill">Automation</span>
-          </div>
-        </article>
-      </div>
-    </section>
+          <article class="item">
+            <h4>Developing Knowledge and Interests</h4>
+            <div class="pill-list">
+              <span class="pill">Data Analytics</span>
+              <span class="pill">Predictive Analytics</span>
+              <span class="pill">Business and Process Analysis</span>
+              <span class="pill">Quantitative Risk Applications</span>
+              <span class="pill">Scientific Software</span>
+              <span class="pill">Quantum Technologies</span>
+              <span class="pill">Machine Learning Fundamentals</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Professional development">
+        <div class="section-head">
+          <h2>Professional Development</h2>
+          <p>Selected learning</p>
+        </div>
+        <div class="section-body">
+          <article class="item">
+            <p style="margin:0">
+              I have used focused coursework to extend my background in data analysis, visualization, Excel-based analysis, predictive analytics, data literacy, Scrum, and technical communication. These courses complement my practical research and technical experience; they are not presented as substitutes for professional project experience.
+            </p>
+          </article>
+
+          <details>
+            <summary>View listed courses and certifications</summary>
+            <ul>
+              <li>Predictive Analytics Essential Training: Data Mining — LinkedIn Learning</li>
+              <li>Complete Guide to Excel Statistics with Copilot — LinkedIn Learning</li>
+              <li>Learning Data Visualization — LinkedIn Learning</li>
+              <li>Learning Data Analytics Part 2: Extending and Applying Core Knowledge — LinkedIn Learning</li>
+              <li>Learning Data Analytics: Foundations — LinkedIn Learning</li>
+              <li>Data Literacy: Exploring and Describing Data in an AI World — LinkedIn Learning</li>
+              <li>Learning Excel: Data Analysis — LinkedIn Learning</li>
+              <li>The Non-Technical Skills of Effective Data Scientists — LinkedIn Learning</li>
+              <li>Scrum: The Basics — LinkedIn Learning</li>
+              <li>Learning the JavaScript Language — LinkedIn Learning</li>
+              <li>LabVIEW training/certification — Technical University of Munich</li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-label="Contact">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>Professional links</p>
+        </div>
+        <div class="section-body two-col">
+          <article class="item">
+            <h3>Get in touch</h3>
+            <div class="facts">
+              <div class="fact"><span>Email</span><strong><a href="mailto:sinamehboodi@gmail.com">sinamehboodi@gmail.com</a></strong></div>
+              <div class="fact"><span>Phone</span><strong><a href="tel:+4914751586184">+49 147 5158 6184</a></strong></div>
+              <div class="fact"><span>Location</span><strong>Munich, Germany</strong></div>
+              <div class="fact"><span>Website</span><strong><a href="https://www.sinamehboodi.io" target="_blank" rel="noreferrer">sinamehboodi.io</a></strong></div>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>Languages</h3>
+            <div class="pill-list" style="margin-top:12px">
+              <span class="pill">Persian — Native</span>
+              <span class="pill">English — Fluent</span>
+              <span class="pill">German — B1 studies in progress</span>
+            </div>
+            <p>
+              I am interested in professional environments where analytical thinking, technology, research experience, and clear communication can be combined.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer" aria-label="Footer">
       <div>© <span id="year"></span> Sina Mehboodi</div>
-      <div class="small-note">
-        Munich, Germany • <a href="mailto:sinamehboodi@gmail.com">sinamehboodi@gmail.com</a> •
-        <a href="https://www.sinamehboodi.io" target="_blank" rel="noreferrer">sinamehboodi.io</a>
-      </div>
+      <div class="small-note">Built as a general professional portfolio • Munich, Germany</div>
     </footer>
   </div>
 
