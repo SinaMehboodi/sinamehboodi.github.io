@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sina Mehboodi — experimental physicist with experience in scientific computing, measurement systems, data analysis, and technical support." />
+  <meta name="theme-color" content="#8dd3c7" />
+  <title>Sina Mehboodi, PhD | Physics · Scientific Computing · Technical Systems</title>
+
+  <meta property="og:title" content="Sina Mehboodi, PhD" />
+  <meta property="og:description" content="Experimental physics, scientific computing, measurement systems, and technical problem solving." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --mint: #8dd3c7;
+      --yellow: #ffffb3;
+      --lavender: #bebada;
+      --coral: #fb8072;
+      --blue: #80b1d3;
+      --orange: #fdb462;
+      --green: #b3de69;
+      --pink: #fccde5;
+      --gray: #d9d9d9;
+
+      --ink: #202631;
+      --muted: #5e6672;
+      --paper: #fbfaf6;
+      --white: #ffffff;
+      --line: rgba(32, 38, 49, 0.14);
+      --line-strong: rgba(32, 38, 49, 0.24);
+      --shadow: 0 18px 48px rgba(32, 38, 49, 0.09);
+      --shadow-hover: 0 22px 56px rgba(32, 38, 49, 0.13);
+      --radius-sm: 16px;
+      --radius: 22px;
+      --radius-lg: 30px;
+      --max: 1120px;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 5% 2%, rgba(141, 211, 199, 0.34), transparent 24rem),
+        radial-gradient(circle at 95% 8%, rgba(252, 205, 229, 0.38), transparent 22rem),
+        radial-gradient(circle at 83% 94%, rgba(255, 255, 179, 0.40), transparent 24rem),
+        var(--paper);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(32, 38, 49, 0.12) 0.55px, transparent 0.55px);
+      background-size: 17px 17px;
+      mask-image: linear-gradient(to bottom, black, transparent 72%);
+      opacity: 0.22;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid rgba(128, 177, 211, 0.78); outline-offset: 4px; border-radius: 10px; }
+
+    .shell { width: min(var(--max), calc(100% - 36px)); margin-inline: auto; }
+
+    .top-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--mint), var(--blue), var(--lavender), var(--coral));
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 12px;
+      z-index: 50;
+      padding-top: 12px;
+    }
+
+    .nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 10px 12px 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 10px 30px rgba(32, 38, 49, 0.08);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; min-width: max-content; }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 13px;
+      background: var(--mint);
+      font: 800 13px var(--mono);
+      box-shadow: 3px 3px 0 var(--ink);
+      transform: rotate(-3deg);
+    }
+    .brand-copy { display: grid; gap: 1px; }
+    .brand-name { font-size: 14.5px; font-weight: 800; letter-spacing: -0.02em; }
+    .brand-sub { color: var(--muted); font: 12px var(--mono); letter-spacing: 0.02em; }
+
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; }
+    .nav-links a {
+      padding: 8px 11px;
+      border-radius: 11px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+    .nav-links a:hover { color: var(--ink); background: var(--yellow); transform: translateY(-1px); }
+
+    .hero {
+      position: relative;
+      margin-top: 24px;
+      min-height: 500px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      align-items: center;
+      gap: 36px;
+      overflow: hidden;
+      padding: clamp(34px, 5.2vw, 62px);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,255,255,0.90)),
+        var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -70px;
+      top: -90px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      left: -72px;
+      bottom: -94px;
+      border: 1px solid var(--line);
+      border-radius: 45% 55% 61% 39% / 46% 44% 56% 54%;
+      background: var(--pink);
+      transform: rotate(18deg);
+    }
+
+    .hero-copy { position: relative; z-index: 2; }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: var(--yellow);
+      font: 750 12px var(--mono);
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
+
+    h1 {
+      margin: 25px 0 18px;
+      max-width: 760px;
+      font-size: clamp(40px, 5.1vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      font-weight: 860;
+    }
+
+    .marker { position: relative; display: inline-block; z-index: 1; }
+    .marker::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -1%;
+      right: -1%;
+      bottom: 6%;
+      height: 24%;
+      border-radius: 999px;
+      background: var(--mint);
+      transform: rotate(-1.2deg);
+    }
+
+    .hero-intro {
+      margin: 0;
+      max-width: 700px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.5vw, 18px);
+      line-height: 1.72;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 27px; }
+
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 16px;
+      border: 1px solid var(--line-strong);
+      border-radius: 13px;
+      background: var(--white);
+      font-size: 14.5px;
+      font-weight: 750;
+      box-shadow: 3px 3px 0 var(--ink);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+    .button:hover { transform: translate(1px, 1px); box-shadow: 2px 2px 0 var(--ink); }
+    .button.primary { background: var(--coral); }
+    .button.soft { background: var(--pink); }
+    .button.mint { background: var(--mint); }
+
+    .profile-mini {
+      position: relative;
+      z-index: 2;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid var(--line-strong);
+      border-radius: 24px;
+      background: linear-gradient(155deg, rgba(190,186,218,0.65), rgba(141,211,199,0.55));
+      box-shadow: 8px 8px 0 rgba(32, 38, 49, 0.92);
+    }
+
+    .profile-row { display: flex; align-items: center; gap: 16px; }
+    .profile-image {
+      width: 92px;
+      height: 92px;
+      flex: 0 0 92px;
+      object-fit: cover;
+      object-position: 50% 36%;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: var(--gray);
+      box-shadow: 0 10px 28px rgba(32,38,49,0.12);
+    }
+    .profile-name { margin: 0; font-size: 20px; line-height: 1.14; letter-spacing: -0.03em; }
+    .profile-role { margin: 6px 0 0; color: rgba(32, 38, 49, 0.84); font-size: 14px; line-height: 1.45; }
+
+    .profile-facts { display: grid; gap: 10px; }
+    .profile-fact {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(32,38,49,0.16);
+      font-size: 13.5px;
+    }
+    .profile-fact span:first-child { color: rgba(32,38,49,0.82); }
+    .profile-fact strong { font-weight: 760; text-align: right; }
+
+    .section { margin-top: 26px; scroll-margin-top: 105px; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 12px;
+      padding-inline: 4px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(30px, 3.8vw, 40px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font: 12.5px var(--mono);
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+    }
+
+    .panel { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
+
+    .snapshot {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 12px;
+    }
+    .snapshot-card {
+      min-height: 188px;
+      padding: 23px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .snapshot-card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(32, 38, 49, 0.10); }
+    .snapshot-card:nth-child(1) { background: var(--mint); }
+    .snapshot-card:nth-child(2) { background: var(--lavender); }
+    .snapshot-card:nth-child(3) { background: var(--yellow); }
+    .snapshot-label { font: 750 12px var(--mono); letter-spacing: 0.05em; text-transform: uppercase; }
+    .snapshot-card h3 { margin: 40px 0 8px; font-size: 23px; line-height: 1.1; letter-spacing: -0.035em; }
+    .snapshot-card p { margin: 0; color: rgba(32, 38, 49, 0.84); font-size: 15px; line-height: 1.58; }
+
+    .timeline { padding: 12px; display: grid; gap: 12px; }
+    .timeline-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 26px;
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .timeline-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .timeline-card:nth-child(1) { background: linear-gradient(120deg, rgba(252, 205, 229, 0.66), rgba(255, 255, 255, 0.98) 63%); }
+    .timeline-card:nth-child(2) { background: linear-gradient(120deg, rgba(128, 177, 211, 0.52), rgba(255, 255, 255, 0.98) 63%); }
+    .timeline-card:nth-child(3) { background: linear-gradient(120deg, rgba(179, 222, 105, 0.56), rgba(255, 255, 255, 0.98) 63%); }
+    .timeline-card::after {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      right: -58px;
+      top: -58px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.48);
+    }
+    .time { align-self: start; font: 750 12.5px var(--mono); letter-spacing: 0.02em; }
+    .time span { display: block; margin-top: 8px; color: var(--muted); font-size: 12px; font-weight: 600; }
+    .role-copy { position: relative; z-index: 2; }
+    .role-copy h3 { margin: 0; font-size: clamp(24px, 3vw, 31px); line-height: 1.1; letter-spacing: -0.04em; }
+    .role-place { margin-top: 7px; color: var(--muted); font-size: 15px; font-weight: 700; }
+    .role-copy ul { margin: 17px 0 0; padding-left: 20px; color: var(--muted); }
+    .role-copy li { margin: 7px 0; font-size: 15.5px; }
+
+    .work-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 12px; }
+    .work-card {
+      position: relative;
+      min-height: 352px;
+      padding: 30px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .work-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .work-card.featured {
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255,255,179,0.74), transparent 15rem),
+        linear-gradient(145deg, rgba(141,211,199,0.92), rgba(128,177,211,0.68) 62%, rgba(190,186,218,0.76));
+      color: var(--ink);
+    }
+    .work-card.green { background: var(--green); }
+    .work-card.blue { background: var(--blue); }
+    .work-card .mini { font: 750 12px var(--mono); letter-spacing: 0.05em; text-transform: uppercase; color: rgba(32,38,49,0.84); }
+    .work-card h3 { margin: 56px 0 13px; font-size: clamp(31px, 4.4vw, 46px); line-height: 1.02; letter-spacing: -0.055em; }
+    .work-card:not(.featured) h3 { font-size: clamp(26px, 3.7vw, 36px); }
+    .work-card p { max-width: 650px; margin: 0; color: rgba(32, 38, 49, 0.86); font-size: 15.5px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .chip {
+      padding: 7px 10px;
+      border: 1px solid rgba(32,38,49,0.40);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.32);
+      font-size: 13px;
+      line-height: 1.25;
+    }
+    .work-link { margin-top: 24px; }
+    .work-card.featured .button { background: var(--white); color: var(--ink); }
+
+    .small-work { display: grid; gap: 12px; }
+    .small-work .work-card { min-height: 170px; }
+    .small-work .work-card h3 { margin-top: 25px; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .skill-card {
+      min-height: 326px;
+      padding: 26px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .skill-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .skill-card:nth-child(1) { background: var(--orange); }
+    .skill-card:nth-child(2) { background: var(--blue); }
+    .skill-card:nth-child(3) { background: var(--lavender); }
+    .skill-no { font: 750 12px var(--mono); }
+    .skill-card h3 { margin: 57px 0 10px; font-size: 26px; line-height: 1.08; letter-spacing: -0.04em; }
+    .skill-card p { margin: 0; color: rgba(32, 38, 49, 0.84); font-size: 15px; }
+    .skill-card .chips { margin-top: 20px; }
+
+    .education-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 12px; }
+    .education-list { padding: 12px; display: grid; gap: 10px; }
+    .degree {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 18px;
+      padding: 21px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.74);
+    }
+    .degree-year { font: 730 12px var(--mono); color: var(--muted); }
+    .degree h3 { margin: 0; font-size: 19px; line-height: 1.3; letter-spacing: -0.025em; }
+    .degree p { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+    .education-panel { background: linear-gradient(145deg, rgba(255, 255, 179, 0.64), rgba(255,255,255,0.97)); }
+    .side-stack { display: grid; gap: 12px; }
+    .side-card { padding: 26px; min-height: 220px; }
+    .side-card.learning { background: var(--pink); }
+    .side-card.activity { background: var(--gray); }
+    .side-card .mini { font: 750 12px var(--mono); letter-spacing: 0.04em; text-transform: uppercase; }
+    .side-card h3 { margin: 35px 0 10px; font-size: 24px; line-height: 1.1; letter-spacing: -0.035em; }
+    .side-card p { margin: 0; color: rgba(32, 38, 49, 0.84); font-size: 15px; }
+    .side-card ul { margin: 15px 0 0; padding-left: 19px; color: rgba(32, 38, 49, 0.84); }
+    .side-card li { margin: 6px 0; font-size: 15px; }
+    .honesty-note {
+      margin-top: 15px;
+      padding: 11px 12px;
+      border: 1px solid rgba(32,38,49,0.22);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.50);
+      font-size: 13px;
+      line-height: 1.48;
+      font-weight: 650;
+    }
+
+    .interest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .interest-card {
+      min-height: 214px;
+      padding: 23px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .interest-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .interest-card:nth-child(1) { background: var(--mint); }
+    .interest-card:nth-child(2) { background: var(--yellow); }
+    .interest-card:nth-child(3) { background: var(--pink); }
+    .interest-card:nth-child(4) { background: var(--gray); }
+    .interest-no { font: 750 12px var(--mono); }
+    .interest-card h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.1; letter-spacing: -0.035em; }
+    .interest-card p { margin: 0; color: rgba(32, 38, 49, 0.84); font-size: 14px; line-height: 1.55; }
+
+    .contact {
+      position: relative;
+      min-height: 290px;
+      margin: 26px 0 44px;
+      padding: clamp(31px, 5vw, 54px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+      overflow: hidden;
+      background: var(--coral);
+    }
+    .contact::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -82px;
+      bottom: -128px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+    .contact-copy { position: relative; z-index: 2; }
+    .contact h2 {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(34px, 5.2vw, 48px);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+    }
+    .contact p { max-width: 720px; margin: 16px 0 0; color: rgba(32, 38, 49, 0.86); font-size: 16px; }
+    .contact-actions { position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 9px; }
+    .contact .button { background: var(--white); }
+
+    footer {
+      padding: 0 4px 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer span { font-family: var(--mono); }
+
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; gap: 28px; min-height: 0; }
+      .profile-mini { max-width: 460px; align-self: auto; }
+      .snapshot, .skills-grid { grid-template-columns: 1fr; }
+      .work-grid, .education-grid { grid-template-columns: 1fr; }
+      .timeline-card { grid-template-columns: 145px 1fr; }
+      .interest-grid { grid-template-columns: 1fr 1fr; }
+      .contact { grid-template-columns: 1fr; }
+      .contact-actions { justify-content: flex-start; }
+    }
+
+    @media (max-width: 700px) {
+      .shell { width: min(var(--max), calc(100% - 22px)); }
+      .nav-wrap { top: 7px; padding-top: 7px; }
+      .nav { min-height: 56px; padding: 8px 10px 8px 12px; }
+      .brand-sub { display: none; }
+      .nav-links a:not(.keep) { display: none; }
+      .nav-links a { font-size: 13.5px; }
+
+      .hero { margin-top: 18px; padding: 34px 23px 38px; border-radius: 26px; }
+      h1 { font-size: clamp(37px, 10vw, 42px); line-height: 1.05; }
+      .hero-intro { font-size: 16px; }
+      .hero-actions { margin-top: 24px; }
+      .button { width: auto; min-height: 45px; font-size: 14px; }
+
+      .profile-mini { padding: 21px; box-shadow: 6px 6px 0 rgba(32,38,49,0.92); }
+      .profile-image { width: 78px; height: 78px; flex-basis: 78px; }
+      .profile-name { font-size: 19px; }
+      .profile-fact { font-size: 13px; }
+
+      .timeline-card { grid-template-columns: 1fr; gap: 14px; padding: 22px; }
+      .degree { grid-template-columns: 1fr; gap: 7px; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .section-head h2 { font-size: 31px; }
+      .interest-grid { grid-template-columns: 1fr; }
+      .contact { min-height: 330px; border-radius: 24px; }
+      .contact h2 { font-size: 34px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-progress" id="progress" aria-hidden="true"></div>
+
+  <div class="nav-wrap shell">
+    <header class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark">SM</span>
+        <span class="brand-copy">
+          <span class="brand-name">Sina Mehboodi, PhD</span>
+          <span class="brand-sub">Physics · Scientific Computing</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Capabilities</a>
+        <a href="#education">Education</a>
+        <a class="keep" href="#contact">Contact</a>
+      </nav>
+    </header>
+  </div>
+
+  <main id="top" class="shell">
+    <section class="hero reveal" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Experimental physicist · Munich</p>
+        <h1 id="hero-title">Turning complex systems into <span class="marker">clear results.</span></h1>
+        <p class="hero-intro">
+          I am a PhD physicist with experience in experimental measurement systems, scientific computing,
+          data analysis, and technical support. My work connects hands-on laboratory practice with careful
+          analysis, reproducible documentation, and practical problem solving.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">Explore my work</a>
+          <a class="button soft" href="mailto:sinamehboodi@gmail.com">Email me</a>
+          <a class="button" href="https://github.com/SinaMehboodi" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+
+      <aside class="profile-mini" aria-label="Profile summary">
+        <div class="profile-row">
+          <img class="profile-image" src="assets/profile.png" alt="Portrait of Sina Mehboodi" />
+          <div>
+            <h2 class="profile-name">Sina Mehboodi, PhD</h2>
+            <p class="profile-role">Experimental physics · Scientific computing · Technical systems</p>
+          </div>
+        </div>
+        <div class="profile-facts">
+          <div class="profile-fact"><span>Based in</span><strong>Munich, Germany</strong></div>
+          <div class="profile-fact"><span>Core strengths</span><strong>Research · Analysis · Systems</strong></div>
+          <div class="profile-fact"><span>Languages</span><strong>English · German · Persian</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section reveal" aria-labelledby="snapshot-title">
+      <div class="section-head">
+        <h2 id="snapshot-title">At a glance</h2>
+        <p>One profile, three strengths</p>
+      </div>
+      <div class="panel snapshot">
+        <article class="snapshot-card">
+          <span class="snapshot-label">Research</span>
+          <h3>Experimental physics</h3>
+          <p>Low-temperature measurements, magnetic systems, synchrotron experiments, and careful interpretation of complex results.</p>
+        </article>
+        <article class="snapshot-card">
+          <span class="snapshot-label">Computing</span>
+          <h3>Scientific analysis</h3>
+          <p>Python-based plotting and fitting, experimental data workflows, uncertainty checks, and clear scientific visualisation.</p>
+        </article>
+        <article class="snapshot-card">
+          <span class="snapshot-label">Systems</span>
+          <h3>Hands-on problem solving</h3>
+          <p>Instrumentation, troubleshooting, technical documentation, user support, and communication across research and IT environments.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section reveal" aria-labelledby="experience-title">
+      <div class="section-head">
+        <h2 id="experience-title">Experience</h2>
+        <p>Research and technical work</p>
+      </div>
+      <div class="panel timeline">
+        <article class="timeline-card">
+          <div class="time">02.2022 — 02.2026<span>Munich / Garching</span></div>
+          <div class="role-copy">
+            <h3>Doctoral Researcher — Experimental Physics</h3>
+            <div class="role-place">Technical University of Munich (TUM)</div>
+            <ul>
+              <li>Completed PhD research on surface engineering in chiral magnetic insulators and topological spin textures.</li>
+              <li>Worked with ferromagnetic resonance, vector network analyser measurements, synchrotron-based REXS, and low-temperature experiments.</li>
+              <li>Used Python, Mathematica, and LabVIEW-supported workflows for analysis, visualisation, fitting, and documentation.</li>
+              <li>Supported laboratory teaching and communicated results through reports, figures, presentations, and collaboration.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <div class="time">05.2020 — 05.2021<span>Shiraz, Iran</span></div>
+          <div class="role-copy">
+            <h3>IT Technician / Clinic IT Support</h3>
+            <div class="role-place">Sepid Surgery Day Clinic</div>
+            <ul>
+              <li>Supported daily IT operations, user access, hardware, networks, and troubleshooting in a clinical environment.</li>
+              <li>Maintained the clinic information system and helped staff resolve software and workflow issues.</li>
+              <li>Documented recurring technical problems and supported reliable day-to-day operation.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <div class="time">11.2018 — 04.2020<span>Shiraz, Iran</span></div>
+          <div class="role-copy">
+            <h3>Software Technician</h3>
+            <div class="role-place">Tarh-o-Pardazesh-e-Hooshmand-e-Aria</div>
+            <ul>
+              <li>Installed, configured, and supported healthcare information systems for end users.</li>
+              <li>Diagnosed software and network issues and provided practical user guidance.</li>
+              <li>Built experience in customer-facing technical support and structured troubleshooting.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" class="section reveal" aria-labelledby="work-title">
+      <div class="section-head">
+        <h2 id="work-title">Selected work</h2>
+        <p>Projects, research, communication</p>
+      </div>
+      <div class="work-grid">
+        <article class="panel work-card featured">
+          <span class="mini">Python project</span>
+          <h3>DRLib</h3>
+          <p>
+            A small Python-based project for plotting, fitting, and organising parts of the PhD data-analysis workflow.
+            It grew from recurring research tasks and the need to make analysis steps easier to reuse.
+          </p>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Matplotlib</span>
+            <span class="chip">Curve fitting</span>
+            <span class="chip">Scientific data</span>
+          </div>
+          <div class="work-link">
+            <a class="button" href="https://github.com/SinaMehboodi/drlib" target="_blank" rel="noreferrer">View repository</a>
+          </div>
+        </article>
+
+        <div class="small-work">
+          <article class="panel work-card green">
+            <span class="mini">Publication · 2025</span>
+            <h3>Surface phases in a chiral magnet</h3>
+            <p>First-author research published in <em>Science and Technology of Advanced Materials</em> using resonant elastic X-ray scattering.</p>
+          </article>
+          <article class="panel work-card blue">
+            <span class="mini">Teaching & communication</span>
+            <h3>From complex ideas to practical understanding</h3>
+            <p>Supported FMR laboratory teaching, assisted with condensed-matter physics, and helped build physics demonstrations for students.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section reveal" aria-labelledby="skills-title">
+      <div class="section-head">
+        <h2 id="skills-title">Capabilities</h2>
+        <p>Demonstrated through study and work</p>
+      </div>
+      <div class="skills-grid">
+        <article class="panel skill-card">
+          <span class="skill-no">01 / Analysis</span>
+          <h3>Scientific computing</h3>
+          <p>Analysis and visualisation developed through experimental research rather than a purely software-focused role.</p>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Matplotlib</span>
+            <span class="chip">Basic NumPy</span>
+            <span class="chip">Basic pandas</span>
+            <span class="chip">Basic SciPy / lmfit</span>
+            <span class="chip">Mathematica</span>
+          </div>
+        </article>
+
+        <article class="panel skill-card">
+          <span class="skill-no">02 / Laboratory</span>
+          <h3>Measurement systems</h3>
+          <p>Hands-on work with complex experimental environments, sample handling, measurement preparation, and data-quality awareness.</p>
+          <div class="chips">
+            <span class="chip">Wet & dry cryostats</span>
+            <span class="chip">Vacuum systems</span>
+            <span class="chip">Magnet setups</span>
+            <span class="chip">VNA / FMR</span>
+            <span class="chip">Lock-in amplifiers</span>
+            <span class="chip">SEM</span>
+            <span class="chip">Nanofabrication</span>
+            <span class="chip">Synchrotron / REXS</span>
+          </div>
+        </article>
+
+        <article class="panel skill-card">
+          <span class="skill-no">03 / Technical work</span>
+          <h3>Practical systems support</h3>
+          <p>Structured troubleshooting, user support, clear documentation, and careful technical work across research and operational settings.</p>
+          <div class="chips">
+            <span class="chip">LabVIEW</span>
+            <span class="chip">Precision wiring</span>
+            <span class="chip">Soldering</span>
+            <span class="chip">Sample-holder assembly</span>
+            <span class="chip">Technical documentation</span>
+            <span class="chip">User support</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section reveal" aria-labelledby="education-title">
+      <div class="section-head">
+        <h2 id="education-title">Education & development</h2>
+        <p>Academic path and continued learning</p>
+      </div>
+      <div class="education-grid">
+        <div class="panel education-panel education-list">
+          <article class="degree">
+            <div class="degree-year">2022 — 2026</div>
+            <div>
+              <h3>PhD in Physics · Technical University of Munich</h3>
+              <p>Dissertation: <em>Surface Engineering in Chiral Magnetic Insulators: Toward Control of Topological Spin Textures</em>.</p>
+            </div>
+          </article>
+          <article class="degree">
+            <div class="degree-year">2017 — 2018</div>
+            <div>
+              <h3>Doctoral Studies in Physics · IASBS</h3>
+              <p>Coursework completed; ranked 113 among approximately 6,000 candidates in the national entrance examination.</p>
+            </div>
+          </article>
+          <article class="degree">
+            <div class="degree-year">2015 — 2017</div>
+            <div>
+              <h3>MSc in Physics · IASBS</h3>
+              <p>GPA 17.29/20; ranked third in the class.</p>
+            </div>
+          </article>
+          <article class="degree">
+            <div class="degree-year">2010 — 2014</div>
+            <div>
+              <h3>BSc in Physics · Urmia University</h3>
+              <p>Physics degree with a strong foundation in mathematical and experimental problem solving.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="side-stack">
+          <article class="panel side-card learning">
+            <span class="mini">Coursework & current learning</span>
+            <h3>Expanding toward data-focused work</h3>
+            <p>Recent learning includes Power BI, Tableau, SQL reporting, data cleaning in Python, data visualisation, predictive analytics, Excel statistics, and Scrum basics.</p>
+            <div class="honesty-note">These are learning areas and are not presented here as professional-level expertise.</div>
+          </article>
+
+          <article class="panel side-card activity">
+            <span class="mini">Languages & activities</span>
+            <h3>Communication across settings</h3>
+            <ul>
+              <li>English — fluent / C1</li>
+              <li>German — currently studying at B1 level</li>
+              <li>Persian — native</li>
+              <li>Co-founder and member, Science House of Zanjan / Physics Scientific Association</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="section reveal" aria-labelledby="interests-title">
+      <div class="section-head">
+        <h2 id="interests-title">Professional interests</h2>
+        <p>Directions, not inflated claims</p>
+      </div>
+      <div class="interest-grid">
+        <article class="panel interest-card">
+          <span class="interest-no">01</span>
+          <div><h3>Scientific software</h3><p>Tools that make technical analysis more repeatable, understandable, and useful.</p></div>
+        </article>
+        <article class="panel interest-card">
+          <span class="interest-no">02</span>
+          <div><h3>Data & visualisation</h3><p>Clear analysis, thoughtful presentation, and the communication of evidence.</p></div>
+        </article>
+        <article class="panel interest-card">
+          <span class="interest-no">03</span>
+          <div><h3>Quantitative applications</h3><p>Risk-related, analytical, and decision-support problems that value mathematical thinking.</p></div>
+        </article>
+        <article class="panel interest-card">
+          <span class="interest-no">04</span>
+          <div><h3>Quantum & precision technology</h3><p>Experimental R&D, sensing, cryogenics, measurement systems, and emerging quantum technologies.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="panel contact reveal" aria-labelledby="contact-title">
+      <div class="contact-copy">
+        <h2 id="contact-title">Let’s connect around a real technical problem.</h2>
+        <p>Based in Munich and interested in work that brings together analytical thinking, technology, experimentation, and clear communication.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="button" href="mailto:sinamehboodi@gmail.com">Email</a>
+        <a class="button" href="https://www.linkedin.com/in/Sinamehboodi" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="button" href="https://github.com/SinaMehboodi" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <div>© <span id="year"></span> Sina Mehboodi</div>
+    <span>Munich, Germany · sinamehboodi@gmail.com</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const progress = document.getElementById("progress");
+    const updateProgress = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = total > 0 ? window.scrollY / total : 0;
+      progress.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
