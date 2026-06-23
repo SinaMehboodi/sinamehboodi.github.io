@@ -3,33 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sina Mehboodi — physicist, scientific programmer, and junior solution consultant working with Planisware." />
-  <meta name="theme-color" content="#07111f" />
-  <title>Sina Mehboodi | Physics · Software · Solutions</title>
-  <script>document.documentElement.classList.add("js");</script>
+  <meta name="description" content="Sina Mehboodi — experimental physicist with experience in scientific computing, measurement systems, data analysis, and technical support." />
+  <meta name="theme-color" content="#8dd3c7" />
+  <title>Sina Mehboodi, PhD | Physics · Scientific Computing · Technical Systems</title>
 
-  <meta property="og:title" content="Sina Mehboodi | Physics · Software · Solutions" />
-  <meta property="og:description" content="Experimental physics, scientific Python, data analysis, and solution consulting." />
+  <meta property="og:title" content="Sina Mehboodi, PhD" />
+  <meta property="og:description" content="Experimental physics, scientific computing, measurement systems, and technical problem solving." />
   <meta property="og:type" content="website" />
 
   <style>
     :root {
-      --bg: #06101d;
-      --bg-soft: #0a1930;
-      --panel: rgba(255,255,255,.065);
-      --panel-strong: rgba(255,255,255,.095);
-      --line: rgba(255,255,255,.15);
-      --text: #f4f8ff;
-      --muted: rgba(235,243,255,.70);
-      --muted-2: rgba(235,243,255,.54);
-      --cyan: #58e3f2;
-      --blue: #6ea8ff;
-      --violet: #a78bfa;
-      --green: #73e6b3;
-      --shadow: 0 30px 90px rgba(0,0,0,.45);
-      --shadow-soft: 0 18px 48px rgba(0,0,0,.28);
-      --radius: 22px;
-      --radius-lg: 34px;
+      --mint: #8dd3c7;
+      --yellow: #ffffb3;
+      --lavender: #bebada;
+      --coral: #fb8072;
+      --blue: #80b1d3;
+      --orange: #fdb462;
+      --green: #b3de69;
+      --pink: #fccde5;
+      --gray: #d9d9d9;
+
+      --ink: #1e2530;
+      --muted: #626a77;
+      --paper: #fbfaf6;
+      --white: #ffffff;
+      --line: rgba(30, 37, 48, 0.15);
+      --line-strong: rgba(30, 37, 48, 0.28);
+      --shadow: 0 18px 50px rgba(30, 37, 48, 0.10);
+      --shadow-strong: 0 24px 70px rgba(30, 37, 48, 0.16);
+      --radius: 24px;
+      --radius-lg: 38px;
       --max: 1180px;
       --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
@@ -39,15 +42,14 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
+      color: var(--ink);
       font-family: var(--sans);
-      color: var(--text);
       line-height: 1.65;
       background:
-        radial-gradient(900px 520px at 8% 2%, rgba(88,227,242,.20), transparent 62%),
-        radial-gradient(850px 560px at 92% 8%, rgba(167,139,250,.18), transparent 62%),
-        radial-gradient(780px 580px at 48% 96%, rgba(110,168,255,.13), transparent 66%),
-        linear-gradient(180deg, var(--bg), var(--bg-soft));
+        radial-gradient(circle at 5% 2%, rgba(141, 211, 199, 0.42), transparent 24rem),
+        radial-gradient(circle at 94% 8%, rgba(252, 205, 229, 0.48), transparent 23rem),
+        radial-gradient(circle at 84% 92%, rgba(255, 255, 179, 0.48), transparent 25rem),
+        var(--paper);
       overflow-x: hidden;
     }
 
@@ -55,98 +57,97 @@
       content: "";
       position: fixed;
       inset: 0;
+      z-index: -1;
       pointer-events: none;
-      opacity: .17;
-      background-image:
-        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, black, transparent 78%);
+      background-image: radial-gradient(rgba(30, 37, 48, 0.16) 0.55px, transparent 0.55px);
+      background-size: 15px 15px;
+      mask-image: linear-gradient(to bottom, black, transparent 72%);
+      opacity: 0.28;
     }
 
     a { color: inherit; text-decoration: none; }
-    a:hover { text-decoration: none; }
+    img { display: block; max-width: 100%; }
     button, a { -webkit-tap-highlight-color: transparent; }
-    :focus-visible { outline: 3px solid rgba(88,227,242,.55); outline-offset: 4px; border-radius: 10px; }
+    :focus-visible { outline: 3px solid rgba(128, 177, 211, 0.72); outline-offset: 4px; border-radius: 10px; }
 
-    .shell { width: min(var(--max), calc(100% - 34px)); margin: 0 auto; }
+    .shell { width: min(var(--max), calc(100% - 36px)); margin-inline: auto; }
 
-    .topbar {
+    .top-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--mint), var(--blue), var(--lavender), var(--coral));
+    }
+
+    .nav-wrap {
       position: sticky;
       top: 12px;
-      z-index: 20;
-      margin-top: 12px;
-      padding: 10px 12px;
+      z-index: 50;
+      padding-top: 12px;
+    }
+
+    .nav {
+      min-height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
+      padding: 9px 11px 9px 14px;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(6,16,29,.72);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: var(--shadow-soft);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 10px 34px rgba(30, 37, 48, 0.09);
     }
 
     .brand { display: flex; align-items: center; gap: 11px; min-width: max-content; }
-    .mark {
-      width: 36px; height: 36px; border-radius: 12px;
-      display: grid; place-items: center;
-      font: 750 13px var(--mono);
-      color: #06101d;
-      background: linear-gradient(135deg, var(--cyan), var(--blue));
-      box-shadow: 0 0 28px rgba(88,227,242,.24);
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 13px;
+      background: var(--mint);
+      font: 800 12px var(--mono);
+      box-shadow: 4px 4px 0 var(--ink);
+      transform: rotate(-4deg);
     }
-    .brand-name { font-weight: 720; letter-spacing: -.2px; }
+    .brand-copy { display: grid; gap: 1px; }
+    .brand-name { font-size: 14px; font-weight: 820; letter-spacing: -0.02em; }
+    .brand-sub { color: var(--muted); font: 10px var(--mono); text-transform: uppercase; letter-spacing: 0.05em; }
 
-    .nav { display: flex; align-items: center; justify-content: flex-end; gap: 5px; flex-wrap: wrap; }
-    .nav a {
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 3px; }
+    .nav-links a {
       padding: 8px 10px;
       border-radius: 11px;
       color: var(--muted);
       font-size: 13px;
-      transition: .18s ease;
+      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
     }
-    .nav a:hover { color: var(--text); background: rgba(255,255,255,.07); }
+    .nav-links a:hover { color: var(--ink); background: var(--yellow); transform: translateY(-1px); }
 
     .hero {
       position: relative;
-      margin-top: 24px;
-      min-height: 610px;
+      margin-top: 26px;
+      min-height: 690px;
       display: grid;
-      grid-template-columns: 1.18fr .82fr;
-      align-items: stretch;
+      grid-template-columns: 1.06fr 0.94fr;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,.16);
+      border: 1px solid var(--line-strong);
       border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+      background: var(--white);
       box-shadow: var(--shadow);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 520px; height: 520px;
-      left: -210px; top: -230px;
-      border-radius: 50%;
-      background: rgba(88,227,242,.14);
-      filter: blur(12px);
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 620px; height: 620px;
-      right: -300px; bottom: -340px;
-      border-radius: 50%;
-      background: rgba(167,139,250,.16);
-      filter: blur(18px);
     }
 
     .hero-copy {
       position: relative;
-      z-index: 2;
-      padding: clamp(34px, 6vw, 78px);
+      z-index: 3;
+      padding: clamp(34px, 6vw, 74px);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -157,496 +158,718 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
+      margin: 0;
       padding: 7px 11px;
-      border: 1px solid rgba(88,227,242,.28);
+      border: 1px solid var(--line-strong);
       border-radius: 999px;
-      background: rgba(88,227,242,.08);
-      color: rgba(245,250,255,.82);
-      font: 12px var(--mono);
-      letter-spacing: .08em;
+      background: var(--yellow);
+      font: 750 10px var(--mono);
+      letter-spacing: 0.075em;
       text-transform: uppercase;
+      box-shadow: 3px 3px 0 var(--ink);
     }
-    .pulse {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 0 rgba(115,230,179,.5);
-      animation: pulse 2.4s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(115,230,179,.45); }
-      70% { box-shadow: 0 0 0 10px rgba(115,230,179,0); }
-      100% { box-shadow: 0 0 0 0 rgba(115,230,179,0); }
-    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
 
     h1 {
-      margin: 22px 0 14px;
-      max-width: 780px;
-      font-size: clamp(45px, 7.4vw, 84px);
-      line-height: .98;
-      letter-spacing: -.055em;
+      margin: 25px 0 19px;
+      max-width: 720px;
+      font-size: clamp(51px, 8.1vw, 94px);
+      line-height: 0.93;
+      letter-spacing: -0.067em;
+      font-weight: 880;
     }
-    .gradient-text {
-      background: linear-gradient(105deg, var(--cyan), var(--blue) 52%, var(--violet));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .marker { position: relative; display: inline-block; z-index: 1; }
+    .marker::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -2%;
+      right: -2%;
+      bottom: 5%;
+      height: 28%;
+      border-radius: 999px;
+      background: var(--mint);
+      transform: rotate(-1.7deg);
     }
-    .intro { max-width: 720px; margin: 0; color: var(--muted); font-size: clamp(16px, 2vw, 19px); }
 
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
-    .btn {
+    .hero-intro { margin: 0; max-width: 700px; color: var(--muted); font-size: clamp(16px, 1.75vw, 19px); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 29px; }
+
+    .button {
+      min-height: 47px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      min-height: 45px;
-      padding: 10px 15px;
-      border: 1px solid var(--line);
+      padding: 10px 16px;
+      border: 1px solid var(--line-strong);
       border-radius: 14px;
-      background: rgba(255,255,255,.06);
-      color: var(--text);
+      background: var(--white);
       font-size: 14px;
-      font-weight: 650;
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      font-weight: 750;
+      box-shadow: 4px 4px 0 var(--ink);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
-    .btn:hover { transform: translateY(-2px); border-color: rgba(88,227,242,.42); background: rgba(255,255,255,.09); }
-    .btn.primary { color: #06101d; border-color: transparent; background: linear-gradient(135deg, var(--cyan), var(--blue)); }
+    .button:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+    .button.primary { background: var(--coral); }
+    .button.soft { background: var(--pink); }
+    .button.mint { background: var(--mint); }
 
-    .hero-visual {
+    .hero-art {
       position: relative;
-      z-index: 2;
-      min-height: 480px;
-      display: grid;
-      place-items: center;
-      padding: 30px;
-      border-left: 1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.055));
+      min-height: 650px;
+      overflow: hidden;
+      border-left: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(190, 186, 218, 0.74), rgba(128, 177, 211, 0.58) 52%, rgba(141, 211, 199, 0.66));
     }
-
-    .orbit {
-      position: relative;
-      width: min(390px, 90%);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border: 1px solid rgba(88,227,242,.23);
-      display: grid;
-      place-items: center;
-      box-shadow: inset 0 0 70px rgba(88,227,242,.05), 0 0 80px rgba(110,168,255,.08);
-    }
-    .orbit::before, .orbit::after {
+    .hero-art::before {
       content: "";
       position: absolute;
+      width: 310px;
+      height: 310px;
+      right: -80px;
+      top: -96px;
+      border: 1px solid var(--line-strong);
       border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.13);
-      inset: 13%;
+      background: var(--yellow);
     }
-    .orbit::after { inset: 28%; border-color: rgba(167,139,250,.24); }
-
-    .core {
-      position: relative;
-      z-index: 3;
-      width: 128px; height: 128px;
-      border-radius: 34px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: -.03em;
-      color: #06101d;
-      background: linear-gradient(135deg, var(--cyan), var(--blue) 55%, var(--violet));
-      box-shadow: 0 18px 60px rgba(88,227,242,.24);
-      transform: rotate(-5deg);
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      left: -120px;
+      bottom: -90px;
+      border: 1px solid var(--line-strong);
+      border-radius: 37% 63% 58% 42% / 53% 37% 63% 47%;
+      background: var(--orange);
+      transform: rotate(19deg);
     }
-    .core span { transform: rotate(5deg); }
 
-    .satellite {
+    .portrait-card {
+      position: absolute;
+      z-index: 2;
+      inset: 50% auto auto 50%;
+      width: min(350px, 76%);
+      transform: translate(-50%, -50%) rotate(2deg);
+      padding: 22px;
+      border: 1px solid var(--line-strong);
+      border-radius: 31px;
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(10px);
+      box-shadow: 14px 14px 0 rgba(30, 37, 48, 0.94);
+    }
+    .portrait-head { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 17px; font: 700 10px var(--mono); text-transform: uppercase; letter-spacing: 0.075em; }
+    .portrait-head span:last-child { color: var(--muted); }
+    .portrait-image {
+      width: 100%;
+      aspect-ratio: 1 / 1.02;
+      object-fit: cover;
+      object-position: 50% 38%;
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: var(--gray);
+      filter: saturate(0.92) contrast(1.02);
+    }
+    .portrait-caption { margin: 17px 2px 2px; font-size: 17px; font-weight: 790; line-height: 1.25; }
+    .portrait-caption small { display: block; margin-top: 6px; color: var(--muted); font-weight: 560; font-size: 12px; }
+
+    .float-tag {
       position: absolute;
       z-index: 4;
-      padding: 8px 11px;
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 12px;
-      background: rgba(6,16,29,.82);
-      backdrop-filter: blur(12px);
-      color: rgba(245,249,255,.80);
-      font: 12px var(--mono);
-      box-shadow: var(--shadow-soft);
+      padding: 9px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 13px;
+      background: var(--white);
+      font: 700 10px var(--mono);
+      box-shadow: 4px 4px 0 var(--ink);
+      animation: float 4.8s ease-in-out infinite;
     }
-    .s1 { top: 8%; left: 44%; }
-    .s2 { right: -2%; top: 48%; }
-    .s3 { bottom: 9%; left: 45%; }
-    .s4 { left: -4%; top: 48%; }
+    .tag-a { top: 13%; left: 5%; background: var(--green); }
+    .tag-b { top: 38%; right: 4%; background: var(--yellow); animation-delay: -0.8s; }
+    .tag-c { bottom: 11%; left: 7%; background: var(--pink); animation-delay: -1.5s; }
+    @keyframes float { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-8px) rotate(1deg); } }
 
-    .section { margin-top: 20px; scroll-margin-top: 92px; }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 12px; padding: 0 4px; }
-    .section-head h2 { margin: 0; font-size: clamp(24px, 4vw, 36px); letter-spacing: -.035em; }
-    .section-head p { margin: 0; color: var(--muted-2); font: 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-
-    .panel {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, var(--panel-strong), var(--panel));
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
+    .section { margin-top: 24px; scroll-margin-top: 105px; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 12px;
+      padding-inline: 4px;
     }
+    .section-head h2 { margin: 0; font-size: clamp(29px, 4.4vw, 44px); line-height: 1; letter-spacing: -0.052em; }
+    .section-head p { margin: 0; color: var(--muted); font: 10px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
 
-    .timeline { padding: 12px; }
-    .role {
-      position: relative;
+    .panel { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
+
+    .snapshot {
       display: grid;
-      grid-template-columns: 185px 1fr;
-      gap: 20px;
-      padding: 25px 24px;
-      border-radius: 17px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 12px;
     }
-    .role + .role { border-top: 1px solid rgba(255,255,255,.10); }
-    .role-date { color: var(--cyan); font: 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
-    .role h3 { margin: 0; font-size: 20px; letter-spacing: -.02em; }
-    .role .meta { margin-top: 4px; color: var(--muted-2); font-size: 14px; }
-    .role p { margin: 13px 0 0; color: var(--muted); }
-    .role ul { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
-    .role li { margin: 6px 0; }
+    .snapshot-card {
+      min-height: 190px;
+      padding: 23px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .snapshot-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(30, 37, 48, 0.11); }
+    .snapshot-card:nth-child(1) { background: var(--mint); }
+    .snapshot-card:nth-child(2) { background: var(--lavender); }
+    .snapshot-card:nth-child(3) { background: var(--yellow); }
+    .snapshot-label { font: 750 10px var(--mono); letter-spacing: 0.075em; text-transform: uppercase; }
+    .snapshot-card h3 { margin: 47px 0 7px; font-size: 23px; line-height: 1.06; letter-spacing: -0.04em; }
+    .snapshot-card p { margin: 0; color: rgba(30, 37, 48, 0.73); font-size: 14px; }
 
-    .project-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 14px; }
-    .project {
-      min-height: 310px;
-      padding: 26px;
-      position: relative;
+    .timeline { padding: 12px; display: grid; gap: 12px; }
+    .timeline-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 26px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
       overflow: hidden;
-      transition: transform .2s ease, border-color .2s ease;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .project:hover { transform: translateY(-3px); border-color: rgba(88,227,242,.32); }
-    .project::after {
+    .timeline-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-strong); }
+    .timeline-card:nth-child(1) { background: linear-gradient(120deg, rgba(252, 205, 229, 0.70), rgba(255, 255, 255, 0.97) 62%); }
+    .timeline-card:nth-child(2) { background: linear-gradient(120deg, rgba(128, 177, 211, 0.58), rgba(255, 255, 255, 0.97) 62%); }
+    .timeline-card:nth-child(3) { background: linear-gradient(120deg, rgba(179, 222, 105, 0.62), rgba(255, 255, 255, 0.97) 62%); }
+    .timeline-card::after {
       content: "";
       position: absolute;
-      width: 240px; height: 240px;
-      right: -100px; bottom: -120px;
+      width: 150px;
+      height: 150px;
+      right: -65px;
+      top: -65px;
+      border: 1px solid var(--line);
       border-radius: 50%;
-      background: rgba(88,227,242,.10);
-      filter: blur(4px);
+      background: rgba(255, 255, 255, 0.54);
     }
-    .project-tag { font: 11px var(--mono); color: var(--cyan); text-transform: uppercase; letter-spacing: .08em; }
-    .project h3 { margin: 16px 0 10px; font-size: 27px; letter-spacing: -.035em; }
-    .project p { color: var(--muted); max-width: 68ch; }
-    .project .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .time { align-self: start; font: 750 11px var(--mono); letter-spacing: 0.04em; }
+    .time span { display: block; margin-top: 8px; color: var(--muted); font-size: 10px; font-weight: 600; }
+    .role-copy { position: relative; z-index: 2; }
+    .role-copy h3 { margin: 0; font-size: clamp(24px, 3.3vw, 34px); line-height: 1.04; letter-spacing: -0.045em; }
+    .role-place { margin-top: 7px; color: var(--muted); font-size: 14px; font-weight: 700; }
+    .role-copy ul { margin: 18px 0 0; padding-left: 19px; color: var(--muted); }
+    .role-copy li { margin: 7px 0; }
 
-    .pill {
-      padding: 7px 10px;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 999px;
-      background: rgba(255,255,255,.045);
-      color: rgba(244,248,255,.76);
+    .work-grid { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 12px; }
+    .work-card {
+      position: relative;
+      min-height: 360px;
+      padding: 31px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .work-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-strong); }
+    .work-card.dark { background: var(--ink); color: var(--white); }
+    .work-card.green { background: var(--green); }
+    .work-card.blue { background: var(--blue); }
+    .work-card .mini { font: 750 10px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.72; }
+    .work-card h3 { margin: 69px 0 13px; font-size: clamp(31px, 5vw, 52px); line-height: 0.98; letter-spacing: -0.06em; }
+    .work-card:not(.dark) h3 { font-size: clamp(28px, 4vw, 39px); }
+    .work-card p { max-width: 650px; margin: 0; color: rgba(255, 255, 255, 0.72); }
+    .work-card:not(.dark) p { color: rgba(30, 37, 48, 0.73); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 21px; }
+    .chip { padding: 7px 10px; border: 1px solid currentColor; border-radius: 999px; font-size: 12px; opacity: 0.82; }
+    .work-link { margin-top: 25px; }
+    .work-card.dark .button { background: var(--mint); color: var(--ink); }
+
+    .small-work { display: grid; gap: 12px; }
+    .small-work .work-card { min-height: 174px; }
+    .small-work .work-card h3 { margin-top: 28px; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .skill-card {
+      min-height: 325px;
+      padding: 26px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .skill-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-strong); }
+    .skill-card:nth-child(1) { background: var(--orange); }
+    .skill-card:nth-child(2) { background: var(--blue); }
+    .skill-card:nth-child(3) { background: var(--lavender); }
+    .skill-no { font: 750 10px var(--mono); }
+    .skill-card h3 { margin: 72px 0 10px; font-size: 27px; line-height: 1.04; letter-spacing: -0.045em; }
+    .skill-card p { margin: 0; color: rgba(30, 37, 48, 0.72); }
+    .skill-card .chips { margin-top: 22px; }
+
+    .education-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 12px; }
+    .education-list { padding: 12px; display: grid; gap: 10px; }
+    .degree {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+    .degree-year { font: 730 10px var(--mono); color: var(--muted); }
+    .degree h3 { margin: 0; font-size: 19px; letter-spacing: -0.025em; }
+    .degree p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+
+    .education-panel { background: linear-gradient(145deg, rgba(255, 255, 179, 0.68), rgba(255,255,255,0.96)); }
+    .side-stack { display: grid; gap: 12px; }
+    .side-card { padding: 26px; min-height: 220px; }
+    .side-card.learning { background: var(--pink); }
+    .side-card.activity { background: var(--gray); }
+    .side-card h3 { margin: 44px 0 10px; font-size: 25px; line-height: 1.05; letter-spacing: -0.04em; }
+    .side-card p { margin: 0; color: rgba(30, 37, 48, 0.72); }
+    .side-card ul { margin: 15px 0 0; padding-left: 18px; color: rgba(30, 37, 48, 0.72); }
+    .side-card li { margin: 6px 0; }
+    .honesty-note {
+      margin-top: 15px;
+      padding: 10px 12px;
+      border: 1px solid rgba(30,37,48,0.22);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.48);
       font-size: 12px;
+      font-weight: 650;
     }
-
-    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .skill-card { padding: 23px; min-height: 250px; }
-    .skill-icon {
-      width: 42px; height: 42px; border-radius: 13px;
-      display: grid; place-items: center;
-      color: #06101d;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--cyan), var(--blue));
-      margin-bottom: 18px;
-    }
-    .skill-card h3 { margin: 0; font-size: 19px; }
-    .skill-card p { color: var(--muted); }
-    .skill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
 
     .interest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .interest {
-      min-height: 160px;
-      padding: 20px;
+    .interest-card {
+      min-height: 220px;
+      padding: 23px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
-    .interest-num { color: var(--muted-2); font: 11px var(--mono); }
-    .interest h3 { margin: 28px 0 0; font-size: 18px; line-height: 1.25; }
-    .interest p { color: var(--muted); font-size: 13px; margin-bottom: 0; }
+    .interest-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-strong); }
+    .interest-card:nth-child(1) { background: var(--mint); }
+    .interest-card:nth-child(2) { background: var(--yellow); }
+    .interest-card:nth-child(3) { background: var(--pink); }
+    .interest-card:nth-child(4) { background: var(--gray); }
+    .interest-no { font: 750 10px var(--mono); }
+    .interest-card h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.06; letter-spacing: -0.038em; }
+    .interest-card p { margin: 0; color: rgba(30, 37, 48, 0.70); font-size: 13px; }
 
     .contact {
-      margin: 20px 0 42px;
-      padding: clamp(26px, 5vw, 52px);
+      position: relative;
+      min-height: 330px;
+      margin: 24px 0 44px;
+      padding: clamp(31px, 6vw, 61px);
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
-      gap: 24px;
-      background:
-        radial-gradient(480px 220px at 10% 0%, rgba(88,227,242,.15), transparent 65%),
-        linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.045));
+      gap: 30px;
+      overflow: hidden;
+      background: var(--coral);
     }
-    .contact h2 { margin: 0; font-size: clamp(28px, 5vw, 48px); letter-spacing: -.045em; }
-    .contact p { max-width: 690px; margin: 10px 0 0; color: var(--muted); }
-    .contact-links { display: flex; flex-wrap: wrap; gap: 9px; justify-content: flex-end; }
+    .contact::after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      right: -88px;
+      bottom: -135px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+    .contact-copy { position: relative; z-index: 2; }
+    .contact h2 { margin: 0; max-width: 730px; font-size: clamp(39px, 7vw, 73px); line-height: 0.95; letter-spacing: -0.065em; }
+    .contact p { max-width: 720px; margin: 18px 0 0; color: rgba(30, 37, 48, 0.76); }
+    .contact-actions { position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 9px; }
+    .contact .button { background: var(--white); }
 
-    footer { padding: 6px 4px 34px; display: flex; justify-content: space-between; gap: 15px; color: var(--muted-2); font-size: 12px; }
+    footer {
+      padding: 0 4px 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
     footer span { font-family: var(--mono); }
 
-    .reveal { opacity: 1; transform: none; }
-    .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
-    .js .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal { opacity: 0; transform: translateY(17px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
-    @media (max-width: 920px) {
-      .nav a:not(.keep) { display: none; }
+    @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-visual { min-height: 410px; border-left: 0; border-top: 1px solid rgba(255,255,255,.10); }
-      .project-grid, .skills-grid { grid-template-columns: 1fr; }
+      .hero-art { min-height: 520px; border-left: 0; border-top: 1px solid var(--line); }
+      .snapshot, .skills-grid { grid-template-columns: 1fr; }
+      .work-grid, .education-grid { grid-template-columns: 1fr; }
+      .timeline-card { grid-template-columns: 145px 1fr; }
       .interest-grid { grid-template-columns: 1fr 1fr; }
       .contact { grid-template-columns: 1fr; }
-      .contact-links { justify-content: flex-start; }
+      .contact-actions { justify-content: flex-start; }
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
       .shell { width: min(var(--max), calc(100% - 22px)); }
-      .topbar { top: 7px; }
-      .brand-name { font-size: 14px; }
-      .hero { min-height: auto; border-radius: 25px; }
-      .hero-copy { padding: 34px 23px; }
-      .hero-visual { min-height: 330px; padding: 20px; }
-      .orbit { width: 280px; }
-      .core { width: 105px; height: 105px; border-radius: 28px; }
-      .satellite { font-size: 10px; padding: 7px 8px; }
-      .role { grid-template-columns: 1fr; gap: 8px; padding: 22px 18px; }
+      .nav-wrap { top: 7px; padding-top: 7px; }
+      .nav { min-height: 55px; }
+      .brand-sub { display: none; }
+      .nav-links a:not(.keep) { display: none; }
+      .hero { margin-top: 18px; border-radius: 28px; }
+      .hero-copy { padding: 36px 23px 42px; }
+      h1 { font-size: clamp(48px, 15vw, 69px); }
+      .hero-art { min-height: 440px; }
+      .portrait-card { width: 260px; padding: 18px; box-shadow: 9px 9px 0 rgba(30, 37, 48, 0.94); }
+      .float-tag { font-size: 8px; padding: 7px 9px; }
+      .timeline-card { grid-template-columns: 1fr; gap: 14px; padding: 23px; }
+      .degree { grid-template-columns: 1fr; gap: 7px; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 5px; }
       .interest-grid { grid-template-columns: 1fr; }
-      .section-head { align-items: start; flex-direction: column; gap: 2px; }
-      footer { flex-direction: column; }
+      .contact { min-height: 355px; border-radius: 26px; }
+      footer { flex-direction: column; align-items: flex-start; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-      .js .reveal { opacity: 1; transform: none; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar shell" aria-label="Primary navigation">
-    <a class="brand" href="#top" aria-label="Go to top">
-      <span class="mark">SM</span>
-      <span class="brand-name">Sina Mehboodi, PhD</span>
-    </a>
-    <nav class="nav" aria-label="Page sections">
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#interests">Interests</a>
-      <a class="keep" href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="top-progress" id="progress" aria-hidden="true"></div>
+
+  <div class="nav-wrap shell">
+    <header class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark">SM</span>
+        <span class="brand-copy">
+          <span class="brand-name">Sina Mehboodi, PhD</span>
+          <span class="brand-sub">Physics · Scientific Computing</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Capabilities</a>
+        <a href="#education">Education</a>
+        <a class="keep" href="#contact">Contact</a>
+      </nav>
+    </header>
+  </div>
 
   <main id="top" class="shell">
     <section class="hero reveal" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="pulse"></span> Physics · Software · Solutions</div>
-        <h1 id="hero-title">From complex systems to <span class="gradient-text">clear solutions.</span></h1>
-        <p class="intro">
-          I am a physicist and junior solution consultant with experience in experimental research,
-          scientific Python, data analysis, and structured technical problem solving. I enjoy turning
-          complex measurements, requirements, and processes into work that is clear, useful, and maintainable.
+        <p class="eyebrow">Experimental physicist · Munich</p>
+        <h1 id="hero-title">Turning complex systems into <span class="marker">clear results.</span></h1>
+        <p class="hero-intro">
+          I am a PhD physicist with experience in experimental measurement systems, scientific computing,
+          data analysis, and technical support. My work connects hands-on laboratory practice with careful
+          analysis, reproducible documentation, and practical problem solving.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">Explore my work</a>
-          <a class="btn" href="mailto:sinamehboodi@gmail.com">Email me</a>
-          <a class="btn" href="https://github.com/SinaMehboodi" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button primary" href="#work">Explore my work</a>
+          <a class="button soft" href="mailto:sinamehboodi@gmail.com">Email me</a>
+          <a class="button" href="https://github.com/SinaMehboodi" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="orbit">
-          <div class="core"><span>Think.<br>Build.<br>Explain.</span></div>
-          <span class="satellite s1">Physics</span>
-          <span class="satellite s2">Solutions</span>
-          <span class="satellite s3">Python</span>
-          <span class="satellite s4">Analysis</span>
+      <div class="hero-art">
+        <span class="float-tag tag-a">Measurement systems</span>
+        <span class="float-tag tag-b">Scientific Python</span>
+        <span class="float-tag tag-c">Technical problem solving</span>
+        <div class="portrait-card">
+          <div class="portrait-head"><span>Professional profile</span><span>01 / 04</span></div>
+          <img class="portrait-image" src="assets/profile.png" alt="Portrait of Sina Mehboodi" />
+          <p class="portrait-caption">Sina Mehboodi, PhD<small>Experimental physics · Scientific computing · Technical systems</small></p>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section reveal">
+    <section class="section reveal" aria-labelledby="snapshot-title">
       <div class="section-head">
-        <h2>Experience</h2>
-        <p>Selected professional path</p>
+        <h2 id="snapshot-title">At a glance</h2>
+        <p>One profile, three strengths</p>
+      </div>
+      <div class="panel snapshot">
+        <article class="snapshot-card">
+          <span class="snapshot-label">Research</span>
+          <h3>Experimental physics</h3>
+          <p>Low-temperature measurements, magnetic systems, synchrotron experiments, and careful interpretation of complex results.</p>
+        </article>
+        <article class="snapshot-card">
+          <span class="snapshot-label">Computing</span>
+          <h3>Scientific analysis</h3>
+          <p>Python-based plotting and fitting, experimental data workflows, uncertainty checks, and clear scientific visualisation.</p>
+        </article>
+        <article class="snapshot-card">
+          <span class="snapshot-label">Systems</span>
+          <h3>Hands-on problem solving</h3>
+          <p>Instrumentation, troubleshooting, technical documentation, user support, and communication across research and IT environments.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section reveal" aria-labelledby="experience-title">
+      <div class="section-head">
+        <h2 id="experience-title">Experience</h2>
+        <p>Research and technical work</p>
       </div>
       <div class="panel timeline">
-        <article class="role">
-          <div class="role-date">Current</div>
-          <div>
-            <h3>Junior Solution Consultant</h3>
-            <div class="meta">Working with Planisware</div>
-            <p>
-              Building experience at the intersection of software, processes, and communication in a
-              project and portfolio management environment.
-            </p>
+        <article class="timeline-card">
+          <div class="time">02.2022 — 02.2026<span>Munich / Garching</span></div>
+          <div class="role-copy">
+            <h3>Doctoral Researcher — Experimental Physics</h3>
+            <div class="role-place">Technical University of Munich (TUM)</div>
             <ul>
-              <li>Understanding requirements and translating them into structured solution work.</li>
-              <li>Supporting configuration, testing, documentation, and problem analysis.</li>
-              <li>Applying a methodical research mindset to business and system questions.</li>
+              <li>Completed PhD research on surface engineering in chiral magnetic insulators and topological spin textures.</li>
+              <li>Worked with ferromagnetic resonance, vector network analyser measurements, synchrotron-based REXS, and low-temperature experiments.</li>
+              <li>Used Python, Mathematica, and LabVIEW-supported workflows for analysis, visualisation, fitting, and documentation.</li>
+              <li>Supported laboratory teaching and communicated results through reports, figures, presentations, and collaboration.</li>
             </ul>
           </div>
         </article>
 
-        <article class="role">
-          <div class="role-date">PhD research</div>
-          <div>
-            <h3>Doctoral Researcher in Experimental Physics</h3>
-            <div class="meta">Technical University of Munich</div>
-            <p>
-              Conducted experimental research involving scientific measurements, quantitative analysis,
-              visualization, interpretation, and communication of complex results.
-            </p>
+        <article class="timeline-card">
+          <div class="time">05.2020 — 05.2021<span>Shiraz, Iran</span></div>
+          <div class="role-copy">
+            <h3>IT Technician / Clinic IT Support</h3>
+            <div class="role-place">Sepid Surgery Day Clinic</div>
             <ul>
-              <li>Processed and evaluated research data with Python-based workflows.</li>
-              <li>Created clear plots and analysis outputs for scientific interpretation.</li>
-              <li>Documented methods and communicated results within an interdisciplinary environment.</li>
-              <li>Supported students in experimental and physics-related work.</li>
+              <li>Supported daily IT operations, user access, hardware, networks, and troubleshooting in a clinical environment.</li>
+              <li>Maintained the clinic information system and helped staff resolve software and workflow issues.</li>
+              <li>Documented recurring technical problems and supported reliable day-to-day operation.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <div class="time">11.2018 — 04.2020<span>Shiraz, Iran</span></div>
+          <div class="role-copy">
+            <h3>Software Technician</h3>
+            <div class="role-place">Tarh-o-Pardazesh-e-Hooshmand-e-Aria</div>
+            <ul>
+              <li>Installed, configured, and supported healthcare information systems for end users.</li>
+              <li>Diagnosed software and network issues and provided practical user guidance.</li>
+              <li>Built experience in customer-facing technical support and structured troubleshooting.</li>
             </ul>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="projects" class="section reveal">
+    <section id="work" class="section reveal" aria-labelledby="work-title">
       <div class="section-head">
-        <h2>Selected work</h2>
-        <p>Built from real research needs</p>
+        <h2 id="work-title">Selected work</h2>
+        <p>Projects, research, communication</p>
       </div>
-      <div class="project-grid">
-        <article class="panel project">
-          <div class="project-tag">Featured Python project</div>
-          <h3>drlib</h3>
+      <div class="work-grid">
+        <article class="panel work-card dark">
+          <span class="mini">Python project</span>
+          <h3>DRLib</h3>
           <p>
-            A Python library developed during my PhD work to support recurring research-data analysis and
-            visualization tasks. The project grew from practical laboratory needs: keeping common analysis
-            steps organised, reusable, and easier to maintain across experiments.
+            A small Python-based project for plotting, fitting, and organising parts of the PhD data-analysis workflow.
+            It grew from recurring research tasks and the need to make analysis steps easier to reuse.
           </p>
-          <div class="stack">
-            <span class="pill">Python</span>
-            <span class="pill">Scientific data</span>
-            <span class="pill">Matplotlib</span>
-            <span class="pill">Reusable analysis</span>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Matplotlib</span>
+            <span class="chip">Curve fitting</span>
+            <span class="chip">Scientific data</span>
           </div>
-          <div class="hero-actions">
-            <a class="btn" href="https://github.com/SinaMehboodi/drlib" target="_blank" rel="noreferrer">View repository</a>
+          <div class="work-link">
+            <a class="button" href="https://github.com/SinaMehboodi/drlib" target="_blank" rel="noreferrer">View repository</a>
           </div>
         </article>
 
-        <article class="panel project">
-          <div class="project-tag">Research practice</div>
-          <h3>Experimental data to scientific insight</h3>
-          <p>
-            My research work combined measurement, data processing, visual evaluation, and careful
-            interpretation. The focus was not only producing results, but making the analytical path
-            understandable and defensible.
-          </p>
-          <div class="stack">
-            <span class="pill">Experiment</span>
-            <span class="pill">Analysis</span>
-            <span class="pill">Visualization</span>
-            <span class="pill">Communication</span>
-          </div>
-        </article>
+        <div class="small-work">
+          <article class="panel work-card green">
+            <span class="mini">Publication · 2025</span>
+            <h3>Surface phases in a chiral magnet</h3>
+            <p>First-author research published in <em>Science and Technology of Advanced Materials</em> using resonant elastic X-ray scattering.</p>
+          </article>
+          <article class="panel work-card blue">
+            <span class="mini">Teaching & communication</span>
+            <h3>From complex ideas to practical understanding</h3>
+            <p>Supported FMR laboratory teaching, assisted with condensed-matter physics, and helped build physics demonstrations for students.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="skills" class="section reveal">
+    <section id="skills" class="section reveal" aria-labelledby="skills-title">
       <div class="section-head">
-        <h2>Skills</h2>
-        <p>Experience separated from learning</p>
+        <h2 id="skills-title">Capabilities</h2>
+        <p>Demonstrated through study and work</p>
       </div>
       <div class="skills-grid">
         <article class="panel skill-card">
-          <div class="skill-icon">01</div>
-          <h3>Scientific analysis</h3>
-          <p>Working with experimental data, identifying patterns, evaluating results, and presenting findings clearly.</p>
-          <div class="skill-list">
-            <span class="pill">Experimental data analysis</span>
-            <span class="pill">Scientific visualization</span>
-            <span class="pill">Quantitative reasoning</span>
-            <span class="pill">Technical documentation</span>
+          <span class="skill-no">01 / Analysis</span>
+          <h3>Scientific computing</h3>
+          <p>Analysis and visualisation developed through experimental research rather than a purely software-focused role.</p>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Matplotlib</span>
+            <span class="chip">Basic NumPy</span>
+            <span class="chip">Basic pandas</span>
+            <span class="chip">Basic SciPy / lmfit</span>
+            <span class="chip">Mathematica</span>
           </div>
         </article>
 
         <article class="panel skill-card">
-          <div class="skill-icon">02</div>
-          <h3>Python for research</h3>
-          <p>Practical Python use developed through research analysis and the creation of drlib.</p>
-          <div class="skill-list">
-            <span class="pill">Python</span>
-            <span class="pill">Matplotlib</span>
-            <span class="pill">NumPy · basic</span>
-            <span class="pill">pandas · basic</span>
-            <span class="pill">lmfit · basic</span>
+          <span class="skill-no">02 / Laboratory</span>
+          <h3>Measurement systems</h3>
+          <p>Hands-on work with complex experimental environments, sample handling, measurement preparation, and data-quality awareness.</p>
+          <div class="chips">
+            <span class="chip">Wet & dry cryostats</span>
+            <span class="chip">Vacuum systems</span>
+            <span class="chip">Magnet setups</span>
+            <span class="chip">VNA / FMR</span>
+            <span class="chip">Lock-in amplifiers</span>
+            <span class="chip">SEM</span>
+            <span class="chip">Nanofabrication</span>
+            <span class="chip">Synchrotron / REXS</span>
           </div>
         </article>
 
         <article class="panel skill-card">
-          <div class="skill-icon">03</div>
-          <h3>Consulting mindset</h3>
-          <p>Bringing structure to technical questions and communicating between systems, processes, and people.</p>
-          <div class="skill-list">
-            <span class="pill">Requirement understanding</span>
-            <span class="pill">Structured problem solving</span>
-            <span class="pill">Testing & documentation</span>
-            <span class="pill">Technical communication</span>
+          <span class="skill-no">03 / Technical work</span>
+          <h3>Practical systems support</h3>
+          <p>Structured troubleshooting, user support, clear documentation, and careful technical work across research and operational settings.</p>
+          <div class="chips">
+            <span class="chip">LabVIEW</span>
+            <span class="chip">Precision wiring</span>
+            <span class="chip">Soldering</span>
+            <span class="chip">Sample-holder assembly</span>
+            <span class="chip">Technical documentation</span>
+            <span class="chip">User support</span>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="interests" class="section reveal">
+    <section id="education" class="section reveal" aria-labelledby="education-title">
       <div class="section-head">
-        <h2>Professional interests</h2>
-        <p>Interests, not claimed expertise</p>
+        <h2 id="education-title">Education & development</h2>
+        <p>Academic path and continued learning</p>
+      </div>
+      <div class="education-grid">
+        <div class="panel education-panel education-list">
+          <article class="degree">
+            <div class="degree-year">2022 — 2026</div>
+            <div>
+              <h3>PhD in Physics · Technical University of Munich</h3>
+              <p>Dissertation: <em>Surface Engineering in Chiral Magnetic Insulators: Toward Control of Topological Spin Textures</em>.</p>
+            </div>
+          </article>
+          <article class="degree">
+            <div class="degree-year">2017 — 2018</div>
+            <div>
+              <h3>Doctoral Studies in Physics · IASBS</h3>
+              <p>Coursework completed; ranked 113 among approximately 6,000 candidates in the national entrance examination.</p>
+            </div>
+          </article>
+          <article class="degree">
+            <div class="degree-year">2015 — 2017</div>
+            <div>
+              <h3>MSc in Physics · IASBS</h3>
+              <p>GPA 17.29/20; ranked third in the class.</p>
+            </div>
+          </article>
+          <article class="degree">
+            <div class="degree-year">2010 — 2014</div>
+            <div>
+              <h3>BSc in Physics · Urmia University</h3>
+              <p>Physics degree with a strong foundation in mathematical and experimental problem solving.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="side-stack">
+          <article class="panel side-card learning">
+            <span class="mini">Coursework & current learning</span>
+            <h3>Expanding toward data-focused work</h3>
+            <p>Recent learning includes Power BI, Tableau, SQL reporting, data cleaning in Python, data visualisation, predictive analytics, Excel statistics, and Scrum basics.</p>
+            <div class="honesty-note">These are learning areas and are not presented here as professional-level expertise.</div>
+          </article>
+
+          <article class="panel side-card activity">
+            <span class="mini">Languages & activities</span>
+            <h3>Communication across settings</h3>
+            <ul>
+              <li>English — fluent / C1</li>
+              <li>German — currently studying at B1 level</li>
+              <li>Persian — native</li>
+              <li>Co-founder and member, Science House of Zanjan / Physics Scientific Association</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="section reveal" aria-labelledby="interests-title">
+      <div class="section-head">
+        <h2 id="interests-title">Professional interests</h2>
+        <p>Directions, not inflated claims</p>
       </div>
       <div class="interest-grid">
-        <article class="panel interest">
-          <span class="interest-num">01</span>
-          <div><h3>Scientific software</h3><p>Tools that make technical and research work clearer and more reusable.</p></div>
+        <article class="panel interest-card">
+          <span class="interest-no">01</span>
+          <div><h3>Scientific software</h3><p>Tools that make technical analysis more repeatable, understandable, and useful.</p></div>
         </article>
-        <article class="panel interest">
-          <span class="interest-num">02</span>
-          <div><h3>Data & analytics</h3><p>Using quantitative thinking and visualization to support decisions.</p></div>
+        <article class="panel interest-card">
+          <span class="interest-no">02</span>
+          <div><h3>Data & visualisation</h3><p>Clear analysis, thoughtful presentation, and the communication of evidence.</p></div>
         </article>
-        <article class="panel interest">
-          <span class="interest-num">03</span>
-          <div><h3>Risk & quantitative applications</h3><p>Applying mathematical reasoning in finance, insurance, and risk-related contexts.</p></div>
+        <article class="panel interest-card">
+          <span class="interest-no">03</span>
+          <div><h3>Quantitative applications</h3><p>Risk-related, analytical, and decision-support problems that value mathematical thinking.</p></div>
         </article>
-        <article class="panel interest">
-          <span class="interest-num">04</span>
-          <div><h3>Quantum technologies</h3><p>Following the field with interest from a physics perspective.</p></div>
+        <article class="panel interest-card">
+          <span class="interest-no">04</span>
+          <div><h3>Quantum & precision technology</h3><p>Experimental R&D, sensing, cryogenics, measurement systems, and emerging quantum technologies.</p></div>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="panel contact reveal">
-      <div>
-        <h2>Let’s connect.</h2>
-        <p>
-          I am based in Munich and interested in conversations around scientific software, data-oriented work,
-          technical consulting, quantitative applications, and technology-focused roles.
-        </p>
+    <section id="contact" class="panel contact reveal" aria-labelledby="contact-title">
+      <div class="contact-copy">
+        <h2 id="contact-title">Let’s connect around a real technical problem.</h2>
+        <p>Based in Munich and interested in work that brings together analytical thinking, technology, experimentation, and clear communication.</p>
       </div>
-      <div class="contact-links">
-        <a class="btn primary" href="mailto:sinamehboodi@gmail.com">Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/Sina-Mehboodi" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://github.com/SinaMehboodi" target="_blank" rel="noreferrer">GitHub</a>
+      <div class="contact-actions">
+        <a class="button" href="mailto:sinamehboodi@gmail.com">Email</a>
+        <a class="button" href="https://www.linkedin.com/in/Sina-Mehboodi" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="button" href="https://github.com/SinaMehboodi" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </section>
   </main>
 
   <footer class="shell">
-    <span>© <span id="year"></span> Sina Mehboodi</span>
-    <span>Munich, Germany · sinamehboodi.io</span>
+    <div>© <span id="year"></span> Sina Mehboodi</div>
+    <span>Munich, Germany · sinamehboodi@gmail.com</span>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    const progress = document.getElementById("progress");
+    const updateProgress = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = total > 0 ? window.scrollY / total : 0;
+      progress.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.10 });
 
     document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
   </script>
