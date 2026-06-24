@@ -573,6 +573,136 @@
       .reveal { opacity: 1; transform: none; }
     }
   </style>
+
+  <!-- COMFORT TYPOGRAPHY OVERRIDES -->
+  <style>
+
+    /* Calibrated to feel like roughly 135% browser zoom at 100% view.
+       Body copy and small labels gain the most; display headings stay restrained. */
+    :root { --max: 1055px; }
+
+    body {
+      font-size: 17.5px;
+      line-height: 1.70;
+    }
+
+    .shell { width: min(var(--max), calc(100% - 40px)); }
+    .nav { min-height: 68px; padding: 11px 14px 11px 16px; }
+    .brand-mark { width: 43px; height: 43px; font-size: 13.5px; }
+    .brand-name { font-size: 15.5px; }
+    .brand-sub { font-size: 12.8px; }
+    .nav-links a { padding: 9px 12px; font-size: 15px; }
+
+    .hero {
+      grid-template-columns: minmax(0, 1fr) 308px;
+      gap: 31px;
+      min-height: 520px;
+      padding: clamp(38px, 5vw, 58px);
+    }
+    .eyebrow { font-size: 13px; padding: 8px 12px; }
+    h1 {
+      max-width: 710px;
+      font-size: clamp(44px, 4.7vw, 54px);
+      line-height: 1.055;
+      letter-spacing: -0.05em;
+    }
+    .hero-intro {
+      max-width: 680px;
+      font-size: clamp(17.5px, 1.35vw, 19px);
+      line-height: 1.74;
+    }
+    .hero-actions { gap: 11px; margin-top: 29px; }
+    .button { min-height: 49px; padding: 11px 17px; font-size: 15.5px; }
+
+    .hero > *, .timeline-card > *, .education-grid > *, .education-list,
+    .side-stack, .contact > * { min-width: 0; }
+    .profile-mini { padding: 25px; gap: 19px; }
+    .profile-name { font-size: 21px; }
+    .profile-role { font-size: 15px; line-height: 1.5; }
+    .profile-fact { font-size: 14.5px; line-height: 1.45; }
+
+    .section { margin-top: 31px; }
+    .section-head { margin-bottom: 15px; }
+    .section-head h2 { font-size: clamp(33px, 3.45vw, 40px); line-height: 1.1; }
+    .section-head p { font-size: 13.3px; }
+
+    .snapshot-card { min-height: 205px; padding: 25px; }
+    .snapshot-label, .work-card .mini, .skill-no, .side-card .mini,
+    .interest-no { font-size: 13px; }
+    .snapshot-card h3 { margin-top: 42px; font-size: 24px; }
+    .snapshot-card p { font-size: 16.5px; line-height: 1.62; }
+
+    .timeline-card { grid-template-columns: 178px 1fr; gap: 28px; padding: 29px; }
+    .time { font-size: 13.3px; }
+    .time span { font-size: 13px; }
+    .role-copy h3 { font-size: clamp(26px, 2.7vw, 31px); line-height: 1.13; }
+    .role-place { font-size: 16px; }
+    .role-copy li { margin: 8px 0; font-size: 16.5px; line-height: 1.62; }
+
+    .work-card { padding: 32px; }
+    .work-card h3 { font-size: clamp(34px, 4vw, 43px); line-height: 1.055; }
+    .work-card:not(.featured) h3 { font-size: clamp(29px, 3.2vw, 35px); }
+    .work-card p { font-size: 16.5px; line-height: 1.64; }
+    .chip { padding: 8px 11px; font-size: 14px; }
+
+    .skill-card { min-height: 342px; padding: 28px; }
+    .skill-card h3 { font-size: 27px; }
+    .skill-card p { font-size: 16px; line-height: 1.64; }
+
+    .degree { grid-template-columns: 118px 1fr; gap: 20px; padding: 23px; }
+    .degree-year { font-size: 13px; }
+    .degree h3 { font-size: 20px; }
+    .degree p { font-size: 15.5px; line-height: 1.62; }
+    .side-card { padding: 28px; }
+    .side-card h3 { font-size: 25px; }
+    .side-card p, .side-card li { font-size: 16px; line-height: 1.62; }
+    .honesty-note { font-size: 14px; line-height: 1.55; }
+
+    .interest-card { min-height: 225px; padding: 25px; }
+    .interest-card h3 { font-size: 22px; }
+    .interest-card p { font-size: 15.5px; line-height: 1.62; }
+
+    .contact { min-height: 310px; }
+    .contact h2 { font-size: clamp(36px, 4.6vw, 46px); line-height: 1.075; }
+    .contact p { font-size: 17px; line-height: 1.68; }
+    footer { font-size: 14px; }
+
+    @media (max-width: 980px) {
+      :root { --max: 900px; }
+      .hero { grid-template-columns: 1fr; }
+      .profile-mini { max-width: 510px; }
+      .timeline-card { grid-template-columns: 155px 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      body { font-size: 17px; }
+      .shell { width: min(var(--max), calc(100% - 24px)); }
+      .nav { min-height: 59px; }
+      .brand-name { font-size: 15px; }
+      .nav-links a { font-size: 14px; }
+      .hero { padding: 35px 23px 39px; }
+      h1 { font-size: clamp(36px, 9.5vw, 40px); line-height: 1.08; }
+      .hero-intro { font-size: 17.25px; line-height: 1.72; }
+      .button { min-height: 47px; font-size: 15px; }
+      .profile-role { font-size: 14.5px; }
+      .profile-fact { font-size: 14px; }
+      .section-head h2 { font-size: 32px; }
+      .section-head p { font-size: 12.8px; }
+      .timeline-card { grid-template-columns: 1fr; }
+      .role-copy h3 { font-size: 26px; }
+      .work-card h3 { font-size: 34px; }
+      .work-card:not(.featured) h3 { font-size: 29px; }
+      .contact h2 { font-size: 35px; }
+      footer { font-size: 13.5px; }
+    }
+
+    @media (max-width: 350px) {
+      .nav-links { display: none; }
+      .hero-actions { gap: 9px; }
+      .button { padding-inline: 14px; }
+    }
+
+  </style>
 </head>
 <body>
   <div class="top-progress" id="progress" aria-hidden="true"></div>
@@ -615,7 +745,7 @@
 
       <aside class="profile-mini" aria-label="Profile summary">
         <div class="profile-row">
-          <img class="profile-image" src="profile.png" alt="Portrait of Sina Mehboodi" />
+          <img class="profile-image" src="assets/profile.png" alt="Portrait of Sina Mehboodi" />
           <div>
             <h2 class="profile-name">Sina Mehboodi, PhD</h2>
             <p class="profile-role">Experimental physics · Scientific computing · Technical systems</p>
@@ -721,7 +851,7 @@
             <span class="chip">Scientific data</span>
           </div>
           <div class="work-link">
-            <a class="button" href="https://sinamehboodi.github.io/drlib/" target="_blank" rel="noreferrer">View repository</a>
+            <a class="button" href="https://github.com/SinaMehboodi/drlib" target="_blank" rel="noreferrer">View repository</a>
           </div>
         </article>
 
